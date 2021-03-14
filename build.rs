@@ -12,12 +12,12 @@ use std::path::PathBuf;
 fn main() {
     // Tell cargo to tell rustc to link the system
     // shared library.
-    #[cfg(windows)] 
+    #[cfg(windows)]
     {
         println!("cargo:rustc-link-lib=dylib=pdfium.dll");
     }
 
-    #[cfg(not(windows))] 
+    #[cfg(not(windows))]
     {
         println!("cargo:rustc-link-lib=dylib=pdfium");
     }
