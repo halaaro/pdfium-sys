@@ -1,4 +1,4 @@
-// Copyright 2016 pdfium-sys Developers
+// Copyright 2021 pdfium-sys Developers
 //
 // Licensed under the Apache License, Version 2.0, <LICENSE-APACHE or
 // http://apache.org/licenses/LICENSE-2.0> or the MIT license <LICENSE-MIT or
@@ -9,4 +9,6 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 
-include!("bindings.rs");
+mod bindings;
+
+pub use bindings::*;
