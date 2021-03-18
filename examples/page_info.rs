@@ -22,42 +22,56 @@ fn main() {
         std::process::exit(-1);
     }
 
-    let file_path = args[1].to_string();
+    let file_path = &args[1];
 
     unsafe {
+        //TODO: replace with FPDF_InitLibraryWithConfig
         sys::FPDF_InitLibrary();
     }
+    println!("FPDF_InitLibrary called");
 
-    let doc = load_doc(&file_path, "");
+    let password = "";
+    let doc = load_doc(file_path, password);
+    if doc.is_null() {
+        print_last_err();
+        panic!("Problem loading document!");
+    }
+    println!("FPDF_LoadDocument called with file_path=\"{}\", password=\"{}\"", file_path, password);
 
     let count: i32;
     unsafe {
         count = sys::FPDF_GetPageCount(doc) as i32;
     }
-
     println!("FPDF_GetPageCount returned {}", count);
 
     let mut width = 0.064;
     let mut height = 0.064;
     let mut index: c_int;
 
-    for i in 0..count + 1 {
+    for i in 0..count {
         let width_ptr: *mut f64 = &mut width;
         let height_ptr: *mut f64 = &mut height;
         index = i;
+        let ret;
         unsafe {
-            sys::FPDF_GetPageSizeByIndex(doc, index, width_ptr, height_ptr);
+            ret = sys::FPDF_GetPageSizeByIndex(doc, index, width_ptr, height_ptr);
+        }
+        if ret == 0 {
+            print_last_err();
+            panic!("Problem reading page size from document!");
         }
 
         println!(
-            "FPDF_GetPageSizeByIndex with index = {} returned width = {}, height = {}",
-            index, width, height
+            "FPDF_GetPageSizeByIndex with index = {} returned {}, width = {}, height = {}",
+            index, ret, width, height
         );
     }
 
     unsafe {
         sys::FPDF_DestroyLibrary();
     }
+    
+    println!("FPDF_DestroyLibrary called");
 }
 
 fn load_doc(file_path: &str, password: &str) -> sys::FPDF_DOCUMENT {
@@ -65,4 +79,10 @@ fn load_doc(file_path: &str, password: &str) -> sys::FPDF_DOCUMENT {
     let c_password = ffi::CString::new(password).unwrap();
 
     unsafe { sys::FPDF_LoadDocument(c_file_path.as_ptr(), c_password.as_ptr()) }
+}
+
+fn print_last_err() {
+    unsafe {
+        println!("FPDF_GetLastError returned {}", sys::FPDF_GetLastError() as u32);
+    }
 }
