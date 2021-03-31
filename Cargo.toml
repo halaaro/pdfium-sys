@@ -1,6 +1,6 @@
 [package]
 name = "pdfium-sys"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Aaron Haley <15240680+aar0ndev@users.noreply.github.com>"]
 edition = "2018"
 description = "PDFium low-level bindings for Rust"
