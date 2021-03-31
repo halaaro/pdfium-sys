@@ -10,6 +10,8 @@ keywords = ["pdfium", "pdf", "graphics", "bindings"]
 categories = ["external-ffi-bindings"]
 links = "pdfium"
 
-[build-dependencies]
-bindgen = "0.54"
+[features]
+default = ["bindgen"]
 
+[build-dependencies]
+bindgen = {version = "0.54", optional=true}
