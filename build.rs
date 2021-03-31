@@ -36,6 +36,15 @@ fn main() {
             // Tell cargo to invalidate the built crate whenever any of the
             // included header files changed.
             .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+            // Try to keep original comments for docs
+            .clang_args(
+                [
+                    "-fretain-comments-from-system-headers",
+                    "-fparse-all-comments",
+                ]
+                .iter(),
+            )
+            .generate_comments(true)
             // Finish the builder and generate the bindings.
             .generate()
             // Unwrap the Result and panic on failure.
