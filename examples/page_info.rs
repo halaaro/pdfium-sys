@@ -36,7 +36,10 @@ fn main() {
         print_last_err();
         panic!("Problem loading document!");
     }
-    println!("FPDF_LoadDocument called with file_path=\"{}\", password=\"{}\"", file_path, password);
+    println!(
+        "FPDF_LoadDocument called with file_path=\"{}\", password=\"{}\"",
+        file_path, password
+    );
 
     let count: i32;
     unsafe {
@@ -70,7 +73,7 @@ fn main() {
     unsafe {
         sys::FPDF_DestroyLibrary();
     }
-    
+
     println!("FPDF_DestroyLibrary called");
 }
 
@@ -83,6 +86,6 @@ fn load_doc(file_path: &str, password: &str) -> sys::FPDF_DOCUMENT {
 
 fn print_last_err() {
     unsafe {
-        println!("FPDF_GetLastError returned {}", sys::FPDF_GetLastError() as u32);
+        println!("FPDF_GetLastError returned {}", sys::FPDF_GetLastError());
     }
 }
