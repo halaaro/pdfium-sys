@@ -37,9 +37,54 @@ pub const FPDFBitmap_Gray: u32 = 1;
 pub const FPDFBitmap_BGR: u32 = 2;
 pub const FPDFBitmap_BGRx: u32 = 3;
 pub const FPDFBitmap_BGRA: u32 = 4;
-pub type size_t = ::std::os::raw::c_ulonglong;
-pub type wchar_t = ::std::os::raw::c_ushort;
-pub type max_align_t = f64;
+pub type size_t = ::std::os::raw::c_ulong;
+pub type wchar_t = ::std::os::raw::c_int;
+#[doc = " Define 'max_align_t' to match the GCC definition."]
+#[repr(C)]
+#[repr(align(16))]
+#[derive(Debug, Copy, Clone)]
+pub struct max_align_t {
+    pub __clang_max_align_nonce1: ::std::os::raw::c_longlong,
+    pub __bindgen_padding_0: u64,
+    pub __clang_max_align_nonce2: u128,
+}
+#[test]
+fn bindgen_test_layout_max_align_t() {
+    assert_eq!(
+        ::std::mem::size_of::<max_align_t>(),
+        32usize,
+        concat!("Size of: ", stringify!(max_align_t))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<max_align_t>(),
+        16usize,
+        concat!("Alignment of ", stringify!(max_align_t))
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<max_align_t>())).__clang_max_align_nonce1 as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(max_align_t),
+            "::",
+            stringify!(__clang_max_align_nonce1)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<max_align_t>())).__clang_max_align_nonce2 as *const _ as usize
+        },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(max_align_t),
+            "::",
+            stringify!(__clang_max_align_nonce2)
+        )
+    );
+}
 pub const FPDF_TEXT_RENDERMODE_FPDF_TEXTRENDERMODE_UNKNOWN: FPDF_TEXT_RENDERMODE = -1;
 pub const FPDF_TEXT_RENDERMODE_FPDF_TEXTRENDERMODE_FILL: FPDF_TEXT_RENDERMODE = 0;
 pub const FPDF_TEXT_RENDERMODE_FPDF_TEXTRENDERMODE_STROKE: FPDF_TEXT_RENDERMODE = 1;
@@ -57,7 +102,7 @@ pub type FPDF_TEXT_RENDERMODE = i32;
 pub struct fpdf_action_t__ {
     _unused: [u8; 0],
 }
-#[doc = " PDF types - use incomplete types (never completed) just for API type safety."]
+#[doc = " PDF types - use incomplete types (never completed) to force API type safety."]
 pub type FPDF_ACTION = *mut fpdf_action_t__;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -71,6 +116,12 @@ pub struct fpdf_attachment_t__ {
     _unused: [u8; 0],
 }
 pub type FPDF_ATTACHMENT = *mut fpdf_attachment_t__;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct fpdf_avail_t__ {
+    _unused: [u8; 0],
+}
+pub type FPDF_AVAIL = *mut fpdf_avail_t__;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct fpdf_bitmap_t__ {
@@ -115,6 +166,12 @@ pub struct fpdf_form_handle_t__ {
 pub type FPDF_FORMHANDLE = *mut fpdf_form_handle_t__;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+pub struct fpdf_glyphpath_t__ {
+    _unused: [u8; 0],
+}
+pub type FPDF_GLYPHPATH = *const fpdf_glyphpath_t__;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct fpdf_javascript_action_t {
     _unused: [u8; 0],
 }
@@ -154,7 +211,7 @@ pub type FPDF_PAGEOBJECTMARK = *mut fpdf_pageobjectmark_t__;
 pub struct fpdf_pagerange_t__ {
     _unused: [u8; 0],
 }
-pub type FPDF_PAGERANGE = *mut fpdf_pagerange_t__;
+pub type FPDF_PAGERANGE = *const fpdf_pagerange_t__;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct fpdf_pathsegment_t {
@@ -170,10 +227,22 @@ pub struct fpdf_schhandle_t__ {
 pub type FPDF_SCHHANDLE = *mut fpdf_schhandle_t__;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+pub struct fpdf_signature_t__ {
+    _unused: [u8; 0],
+}
+pub type FPDF_SIGNATURE = *const fpdf_signature_t__;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct fpdf_structelement_t__ {
     _unused: [u8; 0],
 }
 pub type FPDF_STRUCTELEMENT = *mut fpdf_structelement_t__;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct fpdf_structelement_attr_t__ {
+    _unused: [u8; 0],
+}
+pub type FPDF_STRUCTELEMENT_ATTR = *const fpdf_structelement_attr_t__;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct fpdf_structtree_t__ {
@@ -192,6 +261,12 @@ pub struct fpdf_widget_t__ {
     _unused: [u8; 0],
 }
 pub type FPDF_WIDGET = *mut fpdf_widget_t__;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct fpdf_xobject_t__ {
+    _unused: [u8; 0],
+}
+pub type FPDF_XOBJECT = *mut fpdf_xobject_t__;
 #[doc = " Basic data types"]
 pub type FPDF_BOOL = ::std::os::raw::c_int;
 pub type FPDF_RESULT = ::std::os::raw::c_int;
@@ -202,7 +277,7 @@ pub const _FPDF_DUPLEXTYPE__Simplex: _FPDF_DUPLEXTYPE_ = 1;
 pub const _FPDF_DUPLEXTYPE__DuplexFlipShortEdge: _FPDF_DUPLEXTYPE_ = 2;
 pub const _FPDF_DUPLEXTYPE__DuplexFlipLongEdge: _FPDF_DUPLEXTYPE_ = 3;
 #[doc = " Duplex types"]
-pub type _FPDF_DUPLEXTYPE_ = i32;
+pub type _FPDF_DUPLEXTYPE_ = u32;
 #[doc = " Duplex types"]
 pub use self::_FPDF_DUPLEXTYPE_ as FPDF_DUPLEXTYPE;
 #[doc = " String types"]
@@ -212,7 +287,7 @@ pub type FPDF_WCHAR = ::std::os::raw::c_ushort;
 pub type FPDF_BYTESTRING = *const ::std::os::raw::c_char;
 #[doc = " FPDFSDK always uses UTF-16LE encoded wide strings, each character uses 2"]
 #[doc = " bytes (except surrogation), with the low byte first."]
-pub type FPDF_WIDESTRING = *const ::std::os::raw::c_ushort;
+pub type FPDF_WIDESTRING = *const FPDF_WCHAR;
 #[doc = " Structure for persisting a string beyond the duration of a callback."]
 #[doc = " Note: although represented as a char*, string may be interpreted as"]
 #[doc = " a UTF-16LE formated string. Used only by XFA callbacks."]
@@ -533,6 +608,112 @@ pub type FS_LPPOINTF = *mut FS_POINTF_;
 pub type FS_POINTF = FS_POINTF_;
 #[doc = " Const Pointer to FS_POINTF structure."]
 pub type FS_LPCPOINTF = *const FS_POINTF;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _FS_QUADPOINTSF {
+    pub x1: FS_FLOAT,
+    pub y1: FS_FLOAT,
+    pub x2: FS_FLOAT,
+    pub y2: FS_FLOAT,
+    pub x3: FS_FLOAT,
+    pub y3: FS_FLOAT,
+    pub x4: FS_FLOAT,
+    pub y4: FS_FLOAT,
+}
+#[test]
+fn bindgen_test_layout__FS_QUADPOINTSF() {
+    assert_eq!(
+        ::std::mem::size_of::<_FS_QUADPOINTSF>(),
+        32usize,
+        concat!("Size of: ", stringify!(_FS_QUADPOINTSF))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<_FS_QUADPOINTSF>(),
+        4usize,
+        concat!("Alignment of ", stringify!(_FS_QUADPOINTSF))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_FS_QUADPOINTSF>())).x1 as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_FS_QUADPOINTSF),
+            "::",
+            stringify!(x1)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_FS_QUADPOINTSF>())).y1 as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_FS_QUADPOINTSF),
+            "::",
+            stringify!(y1)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_FS_QUADPOINTSF>())).x2 as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_FS_QUADPOINTSF),
+            "::",
+            stringify!(x2)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_FS_QUADPOINTSF>())).y2 as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_FS_QUADPOINTSF),
+            "::",
+            stringify!(y2)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_FS_QUADPOINTSF>())).x3 as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_FS_QUADPOINTSF),
+            "::",
+            stringify!(x3)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_FS_QUADPOINTSF>())).y3 as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_FS_QUADPOINTSF),
+            "::",
+            stringify!(y3)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_FS_QUADPOINTSF>())).x4 as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_FS_QUADPOINTSF),
+            "::",
+            stringify!(x4)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_FS_QUADPOINTSF>())).y4 as *const _ as usize },
+        28usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_FS_QUADPOINTSF),
+            "::",
+            stringify!(y4)
+        )
+    );
+}
+pub type FS_QUADPOINTSF = _FS_QUADPOINTSF;
 #[doc = " Annotation enums."]
 pub type FPDF_ANNOTATION_SUBTYPE = ::std::os::raw::c_int;
 pub type FPDF_ANNOT_APPEARANCEMODE = ::std::os::raw::c_int;
@@ -551,6 +732,13 @@ extern "C" {
     #[doc = "          future."]
     pub fn FPDF_InitLibrary();
 }
+#[doc = " Anti-Grain Geometry - https://sourceforge.net/projects/agg/"]
+pub const FPDF_RENDERER_TYPE_FPDF_RENDERERTYPE_AGG: FPDF_RENDERER_TYPE = 0;
+#[doc = " Skia - https://skia.org/"]
+pub const FPDF_RENDERER_TYPE_FPDF_RENDERERTYPE_SKIA: FPDF_RENDERER_TYPE = 1;
+#[doc = " PDF renderer types - Experimental."]
+#[doc = " Selection of 2D graphics library to use for rendering to FPDF_BITMAPs."]
+pub type FPDF_RENDERER_TYPE = u32;
 #[doc = " Process-wide options for initializing the library."]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -563,19 +751,28 @@ pub struct FPDF_LIBRARY_CONFIG_ {
     #[doc = " The Array may be NULL itself to use the default paths. May be ignored"]
     #[doc = " entirely depending upon the platform."]
     pub m_pUserFontPaths: *mut *const ::std::os::raw::c_char,
-    #[doc = " pointer to the v8::Isolate to use, or NULL to force PDFium to create one."]
+    #[doc = " Pointer to the v8::Isolate to use, or NULL to force PDFium to create one."]
     pub m_pIsolate: *mut ::std::os::raw::c_void,
     #[doc = " The embedder data slot to use in the v8::Isolate to store PDFium's"]
     #[doc = " per-isolate data. The value needs to be in the range"]
     #[doc = " [0, |v8::Internals::kNumIsolateDataLots|). Note that 0 is fine for most"]
     #[doc = " embedders."]
     pub m_v8EmbedderSlot: ::std::os::raw::c_uint,
+    #[doc = " Pointer to the V8::Platform to use."]
+    pub m_pPlatform: *mut ::std::os::raw::c_void,
+    #[doc = " Explicit specification of core renderer to use. |m_RendererType| must be"]
+    #[doc = " a valid value for |FPDF_LIBRARY_CONFIG| versions of this level or higher,"]
+    #[doc = " or else the initialization will fail with an immediate crash."]
+    #[doc = " Note that use of a specified |FPDF_RENDERER_TYPE| value for which the"]
+    #[doc = " corresponding render library is not included in the build will similarly"]
+    #[doc = " fail with an immediate crash."]
+    pub m_RendererType: FPDF_RENDERER_TYPE,
 }
 #[test]
 fn bindgen_test_layout_FPDF_LIBRARY_CONFIG_() {
     assert_eq!(
         ::std::mem::size_of::<FPDF_LIBRARY_CONFIG_>(),
-        32usize,
+        48usize,
         concat!("Size of: ", stringify!(FPDF_LIBRARY_CONFIG_))
     );
     assert_eq!(
@@ -625,6 +822,30 @@ fn bindgen_test_layout_FPDF_LIBRARY_CONFIG_() {
             stringify!(FPDF_LIBRARY_CONFIG_),
             "::",
             stringify!(m_v8EmbedderSlot)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<FPDF_LIBRARY_CONFIG_>())).m_pPlatform as *const _ as usize
+        },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(FPDF_LIBRARY_CONFIG_),
+            "::",
+            stringify!(m_pPlatform)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<FPDF_LIBRARY_CONFIG_>())).m_RendererType as *const _ as usize
+        },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(FPDF_LIBRARY_CONFIG_),
+            "::",
+            stringify!(m_RendererType)
         )
     );
 }
@@ -682,6 +903,8 @@ extern "C" {
     #[doc = "          If this function fails, you can use FPDF_GetLastError() to retrieve"]
     #[doc = "          the reason why it failed."]
     #[doc = ""]
+    #[doc = "          The encoding for |file_path| is UTF-8."]
+    #[doc = ""]
     #[doc = "          The encoding for |password| can be either UTF-8 or Latin-1. PDFs,"]
     #[doc = "          depending on the security handler revision, will only accept one or"]
     #[doc = "          the other encoding. If |password|'s encoding and the PDF's expected"]
@@ -718,9 +941,9 @@ extern "C" {
     ) -> FPDF_DOCUMENT;
 }
 extern "C" {
+    #[doc = " Experimental API."]
     #[doc = " Function: FPDF_LoadMemDocument64"]
     #[doc = "          Open and load a PDF document from memory."]
-    #[doc = "          Experimental API."]
     #[doc = " Parameters:"]
     #[doc = "          data_buf    -   Pointer to a buffer containing the PDF document."]
     #[doc = "          size        -   Number of bytes in the PDF document."]
@@ -1048,13 +1271,14 @@ extern "C" {
     #[doc = "          A 32-bit integer indicating error code as defined above."]
     #[doc = " Comments:"]
     #[doc = "          If the previous SDK call succeeded, the return value of this"]
-    #[doc = "          function is not defined."]
+    #[doc = "          function is not defined. This function only works in conjunction"]
+    #[doc = "          with APIs that mention FPDF_GetLastError() in their documentation."]
     pub fn FPDF_GetLastError() -> ::std::os::raw::c_ulong;
 }
 extern "C" {
+    #[doc = " Experimental API."]
     #[doc = " Function: FPDF_DocumentHasValidCrossReferenceTable"]
     #[doc = "          Whether the document's cross reference table is valid or not."]
-    #[doc = "          Experimental API."]
     #[doc = " Parameters:"]
     #[doc = "          document    -   Handle to a document. Returned by FPDF_LoadDocument."]
     #[doc = " Return value:"]
@@ -1065,6 +1289,27 @@ extern "C" {
     #[doc = " Comments:"]
     #[doc = "          The return value can change over time as the PDF parser evolves."]
     pub fn FPDF_DocumentHasValidCrossReferenceTable(document: FPDF_DOCUMENT) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Function: FPDF_GetTrailerEnds"]
+    #[doc = "          Get the byte offsets of trailer ends."]
+    #[doc = " Parameters:"]
+    #[doc = "          document    -   Handle to document. Returned by FPDF_LoadDocument()."]
+    #[doc = "          buffer      -   The address of a buffer that receives the"]
+    #[doc = "                          byte offsets."]
+    #[doc = "          length      -   The size, in ints, of |buffer|."]
+    #[doc = " Return value:"]
+    #[doc = "          Returns the number of ints in the buffer on success, 0 on error."]
+    #[doc = ""]
+    #[doc = " |buffer| is an array of integers that describes the exact byte offsets of the"]
+    #[doc = " trailer ends in the document. If |length| is less than the returned length,"]
+    #[doc = " or |document| or |buffer| is NULL, |buffer| will not be modified."]
+    pub fn FPDF_GetTrailerEnds(
+        document: FPDF_DOCUMENT,
+        buffer: *mut ::std::os::raw::c_uint,
+        length: ::std::os::raw::c_ulong,
+    ) -> ::std::os::raw::c_ulong;
 }
 extern "C" {
     #[doc = " Function: FPDF_GetDocPermission"]
@@ -1224,12 +1469,12 @@ pub struct FPDF_COLORSCHEME_ {
 fn bindgen_test_layout_FPDF_COLORSCHEME_() {
     assert_eq!(
         ::std::mem::size_of::<FPDF_COLORSCHEME_>(),
-        16usize,
+        32usize,
         concat!("Size of: ", stringify!(FPDF_COLORSCHEME_))
     );
     assert_eq!(
         ::std::mem::align_of::<FPDF_COLORSCHEME_>(),
-        4usize,
+        8usize,
         concat!("Alignment of ", stringify!(FPDF_COLORSCHEME_))
     );
     assert_eq!(
@@ -1248,7 +1493,7 @@ fn bindgen_test_layout_FPDF_COLORSCHEME_() {
         unsafe {
             &(*(::std::ptr::null::<FPDF_COLORSCHEME_>())).path_stroke_color as *const _ as usize
         },
-        4usize,
+        8usize,
         concat!(
             "Offset of field: ",
             stringify!(FPDF_COLORSCHEME_),
@@ -1260,7 +1505,7 @@ fn bindgen_test_layout_FPDF_COLORSCHEME_() {
         unsafe {
             &(*(::std::ptr::null::<FPDF_COLORSCHEME_>())).text_fill_color as *const _ as usize
         },
-        8usize,
+        16usize,
         concat!(
             "Offset of field: ",
             stringify!(FPDF_COLORSCHEME_),
@@ -1272,7 +1517,7 @@ fn bindgen_test_layout_FPDF_COLORSCHEME_() {
         unsafe {
             &(*(::std::ptr::null::<FPDF_COLORSCHEME_>())).text_stroke_color as *const _ as usize
         },
-        12usize,
+        24usize,
         concat!(
             "Offset of field: ",
             stringify!(FPDF_COLORSCHEME_),
@@ -1511,9 +1756,15 @@ extern "C" {
     #[doc = "                          above."]
     #[doc = "          first_scan  -   A pointer to the first byte of the first line if"]
     #[doc = "                          using an external buffer. If this parameter is NULL,"]
-    #[doc = "                          then the a new buffer will be created."]
-    #[doc = "          stride      -   Number of bytes for each scan line, for external"]
-    #[doc = "                          buffer only."]
+    #[doc = "                          then a new buffer will be created."]
+    #[doc = "          stride      -   Number of bytes for each scan line. The value must"]
+    #[doc = "                          be 0 or greater. When the value is 0,"]
+    #[doc = "                          FPDFBitmap_CreateEx() will automatically calculate"]
+    #[doc = "                          the appropriate value using |width| and |format|."]
+    #[doc = "                          When using an external buffer, it is recommended for"]
+    #[doc = "                          the caller to pass in the value."]
+    #[doc = "                          When not using an external buffer, it is recommended"]
+    #[doc = "                          for the caller to pass in 0."]
     #[doc = " Return value:"]
     #[doc = "          The bitmap handle, or NULL if parameter error or out of memory."]
     #[doc = " Comments:"]
@@ -1522,9 +1773,11 @@ extern "C" {
     #[doc = "          function can be used in any place that a FPDF_BITMAP handle is"]
     #[doc = "          required."]
     #[doc = ""]
-    #[doc = "          If an external buffer is used, then the application should destroy"]
-    #[doc = "          the buffer by itself. FPDFBitmap_Destroy function will not destroy"]
-    #[doc = "          the buffer."]
+    #[doc = "          If an external buffer is used, then the caller should destroy the"]
+    #[doc = "          buffer. FPDFBitmap_Destroy() will not destroy the buffer."]
+    #[doc = ""]
+    #[doc = "          It is recommended to use FPDFBitmap_GetStride() to get the stride"]
+    #[doc = "          value."]
     pub fn FPDFBitmap_CreateEx(
         width: ::std::os::raw::c_int,
         height: ::std::os::raw::c_int,
@@ -1672,9 +1925,9 @@ extern "C" {
     pub fn FPDF_VIEWERREF_GetPrintPageRange(document: FPDF_DOCUMENT) -> FPDF_PAGERANGE;
 }
 extern "C" {
+    #[doc = " Experimental API."]
     #[doc = " Function: FPDF_VIEWERREF_GetPrintPageRangeCount"]
     #[doc = "          Returns the number of elements in a FPDF_PAGERANGE."]
-    #[doc = "          Experimental API."]
     #[doc = " Parameters:"]
     #[doc = "          pagerange   -   Handle to the page range."]
     #[doc = " Return value:"]
@@ -1682,9 +1935,9 @@ extern "C" {
     pub fn FPDF_VIEWERREF_GetPrintPageRangeCount(pagerange: FPDF_PAGERANGE) -> size_t;
 }
 extern "C" {
+    #[doc = " Experimental API."]
     #[doc = " Function: FPDF_VIEWERREF_GetPrintPageRangeElement"]
     #[doc = "          Returns an element from a FPDF_PAGERANGE."]
-    #[doc = "          Experimental API."]
     #[doc = " Parameters:"]
     #[doc = "          pagerange   -   Handle to the page range."]
     #[doc = "          index       -   Index of the element."]
@@ -1776,4 +2029,68 @@ extern "C" {
         buffer: *mut ::std::os::raw::c_void,
         buflen: *mut ::std::os::raw::c_long,
     ) -> FPDF_DEST;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Function: FPDF_GetXFAPacketCount"]
+    #[doc = "          Get the number of valid packets in the XFA entry."]
+    #[doc = " Parameters:"]
+    #[doc = "          document - Handle to the document."]
+    #[doc = " Return value:"]
+    #[doc = "          The number of valid packets, or -1 on error."]
+    pub fn FPDF_GetXFAPacketCount(document: FPDF_DOCUMENT) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Function: FPDF_GetXFAPacketName"]
+    #[doc = "          Get the name of a packet in the XFA array."]
+    #[doc = " Parameters:"]
+    #[doc = "          document - Handle to the document."]
+    #[doc = "          index    - Index number of the packet. 0 for the first packet."]
+    #[doc = "          buffer   - Buffer for holding the name of the XFA packet."]
+    #[doc = "          buflen   - Length of |buffer| in bytes."]
+    #[doc = " Return value:"]
+    #[doc = "          The length of the packet name in bytes, or 0 on error."]
+    #[doc = ""]
+    #[doc = " |document| must be valid and |index| must be in the range [0, N), where N is"]
+    #[doc = " the value returned by FPDF_GetXFAPacketCount()."]
+    #[doc = " |buffer| is only modified if it is non-NULL and |buflen| is greater than or"]
+    #[doc = " equal to the length of the packet name. The packet name includes a"]
+    #[doc = " terminating NUL character. |buffer| is unmodified on error."]
+    pub fn FPDF_GetXFAPacketName(
+        document: FPDF_DOCUMENT,
+        index: ::std::os::raw::c_int,
+        buffer: *mut ::std::os::raw::c_void,
+        buflen: ::std::os::raw::c_ulong,
+    ) -> ::std::os::raw::c_ulong;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Function: FPDF_GetXFAPacketContent"]
+    #[doc = "          Get the content of a packet in the XFA array."]
+    #[doc = " Parameters:"]
+    #[doc = "          document   - Handle to the document."]
+    #[doc = "          index      - Index number of the packet. 0 for the first packet."]
+    #[doc = "          buffer     - Buffer for holding the content of the XFA packet."]
+    #[doc = "          buflen     - Length of |buffer| in bytes."]
+    #[doc = "          out_buflen - Pointer to the variable that will receive the minimum"]
+    #[doc = "                       buffer size needed to contain the content of the XFA"]
+    #[doc = "                       packet."]
+    #[doc = " Return value:"]
+    #[doc = "          Whether the operation succeeded or not."]
+    #[doc = ""]
+    #[doc = " |document| must be valid and |index| must be in the range [0, N), where N is"]
+    #[doc = " the value returned by FPDF_GetXFAPacketCount(). |out_buflen| must not be"]
+    #[doc = " NULL. When the aforementioned arguments are valid, the operation succeeds,"]
+    #[doc = " and |out_buflen| receives the content size. |buffer| is only modified if"]
+    #[doc = " |buffer| is non-null and long enough to contain the content. Callers must"]
+    #[doc = " check both the return value and the input |buflen| is no less than the"]
+    #[doc = " returned |out_buflen| before using the data in |buffer|."]
+    pub fn FPDF_GetXFAPacketContent(
+        document: FPDF_DOCUMENT,
+        index: ::std::os::raw::c_int,
+        buffer: *mut ::std::os::raw::c_void,
+        buflen: ::std::os::raw::c_ulong,
+        out_buflen: *mut ::std::os::raw::c_ulong,
+    ) -> FPDF_BOOL;
 }
