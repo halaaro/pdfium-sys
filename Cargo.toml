@@ -11,8 +11,9 @@ categories = ["external-ffi-bindings"]
 links = "pdfium"
 
 [features]
-default = []
+default = ["pdfium_build"]
 dynamic_link = []
+pdfium_build = []
 
 [dependencies]
 link-cplusplus = {version = "1.0", optional=true}

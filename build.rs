@@ -8,7 +8,11 @@
 #[cfg(link_cplusplus)]
 extern crate link_cplusplus;
 
+mod pdfium_build;
+
 use std::{env, fs};
+
+use pdfium_build::{gclient, gn, ninja, path};
 
 fn main() {
     if cfg!(feature = "dynamic_link") {
@@ -16,11 +20,22 @@ fn main() {
     } else {
         link_static();
     }
-    if let Some(path) = env_dir("PDFIUM_LIB_DIR") {
-        println!("cargo:rustc-link-search=native={path}");
-    }
     #[cfg(feature = "bindgen")]
     generate_bindings();
+
+    if cfg!(feature = "pdfium_build") {
+        path::mkdirs(&path::gclient_build_dir());
+        gclient::config();
+        gclient::sync();
+        gn::gen();
+        ninja::compile();
+        println!(
+            "cargo:rustc-link-search=native={}",
+            path::pdfium_lib_dir().to_string_lossy()
+        );
+    } else if let Some(path) = env_dir("PDFIUM_LIB_DIR") {
+        println!("cargo:rustc-link-search=native={path}");
+    }
 }
 
 fn link_static() {
@@ -60,13 +75,18 @@ fn generate_bindings() {
         // included header files changed.
         .parse_callbacks(Box::new(bindgen::CargoCallbacks));
 
-    if let Some(path) = env_dir("PDFIUM_INCLUDE") {
+    let include_path = if let Some(path) = env_dir("PDFIUM_INCLUDE") {
         let mut p = PathBuf::from(path);
         if p.is_relative() {
             p = std::env::current_dir().unwrap().join(p);
         }
-        builder = builder.clang_arg(format!("-I/{}", p.to_string_lossy()));
-    }
+        p
+    } else {
+        let mut public_include = pdfium_build::path::src_dir();
+        public_include.push("public");
+        public_include
+    };
+    builder = builder.clang_arg(format!("-I/{}", include_path.to_string_lossy()));
 
     let bindings = builder
         // Try to keep original comments for docs
