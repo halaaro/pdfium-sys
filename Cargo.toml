@@ -11,10 +11,11 @@ categories = ["external-ffi-bindings"]
 links = "pdfium"
 
 [features]
-default = ["bindgen"]
+default = []
+dynamic_link = []
+
+[dependencies]
+link-cplusplus = {version = "1.0", optional=true}
 
 [build-dependencies]
 bindgen = {version = "0.54", optional=true}
-
-[package.metadata.docs.rs]
-features = []
