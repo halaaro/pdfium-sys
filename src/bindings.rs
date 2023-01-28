@@ -2094,3 +2094,269 @@ extern "C" {
         out_buflen: *mut ::std::os::raw::c_ulong,
     ) -> FPDF_BOOL;
 }
+extern "C" {
+    #[doc = " Set \"MediaBox\" entry to the page dictionary."]
+    #[doc = ""]
+    #[doc = " page   - Handle to a page."]
+    #[doc = " left   - The left of the rectangle."]
+    #[doc = " bottom - The bottom of the rectangle."]
+    #[doc = " right  - The right of the rectangle."]
+    #[doc = " top    - The top of the rectangle."]
+    pub fn FPDFPage_SetMediaBox(page: FPDF_PAGE, left: f32, bottom: f32, right: f32, top: f32);
+}
+extern "C" {
+    #[doc = " Set \"CropBox\" entry to the page dictionary."]
+    #[doc = ""]
+    #[doc = " page   - Handle to a page."]
+    #[doc = " left   - The left of the rectangle."]
+    #[doc = " bottom - The bottom of the rectangle."]
+    #[doc = " right  - The right of the rectangle."]
+    #[doc = " top    - The top of the rectangle."]
+    pub fn FPDFPage_SetCropBox(page: FPDF_PAGE, left: f32, bottom: f32, right: f32, top: f32);
+}
+extern "C" {
+    #[doc = " Set \"BleedBox\" entry to the page dictionary."]
+    #[doc = ""]
+    #[doc = " page   - Handle to a page."]
+    #[doc = " left   - The left of the rectangle."]
+    #[doc = " bottom - The bottom of the rectangle."]
+    #[doc = " right  - The right of the rectangle."]
+    #[doc = " top    - The top of the rectangle."]
+    pub fn FPDFPage_SetBleedBox(page: FPDF_PAGE, left: f32, bottom: f32, right: f32, top: f32);
+}
+extern "C" {
+    #[doc = " Set \"TrimBox\" entry to the page dictionary."]
+    #[doc = ""]
+    #[doc = " page   - Handle to a page."]
+    #[doc = " left   - The left of the rectangle."]
+    #[doc = " bottom - The bottom of the rectangle."]
+    #[doc = " right  - The right of the rectangle."]
+    #[doc = " top    - The top of the rectangle."]
+    pub fn FPDFPage_SetTrimBox(page: FPDF_PAGE, left: f32, bottom: f32, right: f32, top: f32);
+}
+extern "C" {
+    #[doc = " Set \"ArtBox\" entry to the page dictionary."]
+    #[doc = ""]
+    #[doc = " page   - Handle to a page."]
+    #[doc = " left   - The left of the rectangle."]
+    #[doc = " bottom - The bottom of the rectangle."]
+    #[doc = " right  - The right of the rectangle."]
+    #[doc = " top    - The top of the rectangle."]
+    pub fn FPDFPage_SetArtBox(page: FPDF_PAGE, left: f32, bottom: f32, right: f32, top: f32);
+}
+extern "C" {
+    #[doc = " Get \"MediaBox\" entry from the page dictionary."]
+    #[doc = ""]
+    #[doc = " page   - Handle to a page."]
+    #[doc = " left   - Pointer to a float value receiving the left of the rectangle."]
+    #[doc = " bottom - Pointer to a float value receiving the bottom of the rectangle."]
+    #[doc = " right  - Pointer to a float value receiving the right of the rectangle."]
+    #[doc = " top    - Pointer to a float value receiving the top of the rectangle."]
+    #[doc = ""]
+    #[doc = " On success, return true and write to the out parameters. Otherwise return"]
+    #[doc = " false and leave the out parameters unmodified."]
+    pub fn FPDFPage_GetMediaBox(
+        page: FPDF_PAGE,
+        left: *mut f32,
+        bottom: *mut f32,
+        right: *mut f32,
+        top: *mut f32,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get \"CropBox\" entry from the page dictionary."]
+    #[doc = ""]
+    #[doc = " page   - Handle to a page."]
+    #[doc = " left   - Pointer to a float value receiving the left of the rectangle."]
+    #[doc = " bottom - Pointer to a float value receiving the bottom of the rectangle."]
+    #[doc = " right  - Pointer to a float value receiving the right of the rectangle."]
+    #[doc = " top    - Pointer to a float value receiving the top of the rectangle."]
+    #[doc = ""]
+    #[doc = " On success, return true and write to the out parameters. Otherwise return"]
+    #[doc = " false and leave the out parameters unmodified."]
+    pub fn FPDFPage_GetCropBox(
+        page: FPDF_PAGE,
+        left: *mut f32,
+        bottom: *mut f32,
+        right: *mut f32,
+        top: *mut f32,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get \"BleedBox\" entry from the page dictionary."]
+    #[doc = ""]
+    #[doc = " page   - Handle to a page."]
+    #[doc = " left   - Pointer to a float value receiving the left of the rectangle."]
+    #[doc = " bottom - Pointer to a float value receiving the bottom of the rectangle."]
+    #[doc = " right  - Pointer to a float value receiving the right of the rectangle."]
+    #[doc = " top    - Pointer to a float value receiving the top of the rectangle."]
+    #[doc = ""]
+    #[doc = " On success, return true and write to the out parameters. Otherwise return"]
+    #[doc = " false and leave the out parameters unmodified."]
+    pub fn FPDFPage_GetBleedBox(
+        page: FPDF_PAGE,
+        left: *mut f32,
+        bottom: *mut f32,
+        right: *mut f32,
+        top: *mut f32,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get \"TrimBox\" entry from the page dictionary."]
+    #[doc = ""]
+    #[doc = " page   - Handle to a page."]
+    #[doc = " left   - Pointer to a float value receiving the left of the rectangle."]
+    #[doc = " bottom - Pointer to a float value receiving the bottom of the rectangle."]
+    #[doc = " right  - Pointer to a float value receiving the right of the rectangle."]
+    #[doc = " top    - Pointer to a float value receiving the top of the rectangle."]
+    #[doc = ""]
+    #[doc = " On success, return true and write to the out parameters. Otherwise return"]
+    #[doc = " false and leave the out parameters unmodified."]
+    pub fn FPDFPage_GetTrimBox(
+        page: FPDF_PAGE,
+        left: *mut f32,
+        bottom: *mut f32,
+        right: *mut f32,
+        top: *mut f32,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get \"ArtBox\" entry from the page dictionary."]
+    #[doc = ""]
+    #[doc = " page   - Handle to a page."]
+    #[doc = " left   - Pointer to a float value receiving the left of the rectangle."]
+    #[doc = " bottom - Pointer to a float value receiving the bottom of the rectangle."]
+    #[doc = " right  - Pointer to a float value receiving the right of the rectangle."]
+    #[doc = " top    - Pointer to a float value receiving the top of the rectangle."]
+    #[doc = ""]
+    #[doc = " On success, return true and write to the out parameters. Otherwise return"]
+    #[doc = " false and leave the out parameters unmodified."]
+    pub fn FPDFPage_GetArtBox(
+        page: FPDF_PAGE,
+        left: *mut f32,
+        bottom: *mut f32,
+        right: *mut f32,
+        top: *mut f32,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Apply transforms to |page|."]
+    #[doc = ""]
+    #[doc = " If |matrix| is provided it will be applied to transform the page."]
+    #[doc = " If |clipRect| is provided it will be used to clip the resulting page."]
+    #[doc = " If neither |matrix| or |clipRect| are provided this method returns |false|."]
+    #[doc = " Returns |true| if transforms are applied."]
+    #[doc = ""]
+    #[doc = " This function will transform the whole page, and would take effect to all the"]
+    #[doc = " objects in the page."]
+    #[doc = ""]
+    #[doc = " page        - Page handle."]
+    #[doc = " matrix      - Transform matrix."]
+    #[doc = " clipRect    - Clipping rectangle."]
+    pub fn FPDFPage_TransFormWithClip(
+        page: FPDF_PAGE,
+        matrix: *const FS_MATRIX,
+        clipRect: *const FS_RECTF,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Transform (scale, rotate, shear, move) the clip path of page object."]
+    #[doc = " page_object - Handle to a page object. Returned by"]
+    #[doc = " FPDFPageObj_NewImageObj()."]
+    #[doc = ""]
+    #[doc = " a  - The coefficient \"a\" of the matrix."]
+    #[doc = " b  - The coefficient \"b\" of the matrix."]
+    #[doc = " c  - The coefficient \"c\" of the matrix."]
+    #[doc = " d  - The coefficient \"d\" of the matrix."]
+    #[doc = " e  - The coefficient \"e\" of the matrix."]
+    #[doc = " f  - The coefficient \"f\" of the matrix."]
+    pub fn FPDFPageObj_TransformClipPath(
+        page_object: FPDF_PAGEOBJECT,
+        a: f64,
+        b: f64,
+        c: f64,
+        d: f64,
+        e: f64,
+        f: f64,
+    );
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the clip path of the page object."]
+    #[doc = ""]
+    #[doc = "   page object - Handle to a page object. Returned by e.g."]
+    #[doc = "                 FPDFPage_GetObject()."]
+    #[doc = ""]
+    #[doc = " Returns the handle to the clip path, or NULL on failure. The caller does not"]
+    #[doc = " take ownership of the returned FPDF_CLIPPATH. Instead, it remains valid until"]
+    #[doc = " FPDF_ClosePage() is called for the page containing |page_object|."]
+    pub fn FPDFPageObj_GetClipPath(page_object: FPDF_PAGEOBJECT) -> FPDF_CLIPPATH;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get number of paths inside |clip_path|."]
+    #[doc = ""]
+    #[doc = "   clip_path - handle to a clip_path."]
+    #[doc = ""]
+    #[doc = " Returns the number of objects in |clip_path| or -1 on failure."]
+    pub fn FPDFClipPath_CountPaths(clip_path: FPDF_CLIPPATH) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get number of segments inside one path of |clip_path|."]
+    #[doc = ""]
+    #[doc = "   clip_path  - handle to a clip_path."]
+    #[doc = "   path_index - index into the array of paths of the clip path."]
+    #[doc = ""]
+    #[doc = " Returns the number of segments or -1 on failure."]
+    pub fn FPDFClipPath_CountPathSegments(
+        clip_path: FPDF_CLIPPATH,
+        path_index: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get segment in one specific path of |clip_path| at index."]
+    #[doc = ""]
+    #[doc = "   clip_path     - handle to a clip_path."]
+    #[doc = "   path_index    - the index of a path."]
+    #[doc = "   segment_index - the index of a segment."]
+    #[doc = ""]
+    #[doc = " Returns the handle to the segment, or NULL on failure. The caller does not"]
+    #[doc = " take ownership of the returned FPDF_PATHSEGMENT. Instead, it remains valid"]
+    #[doc = " until FPDF_ClosePage() is called for the page containing |clip_path|."]
+    pub fn FPDFClipPath_GetPathSegment(
+        clip_path: FPDF_CLIPPATH,
+        path_index: ::std::os::raw::c_int,
+        segment_index: ::std::os::raw::c_int,
+    ) -> FPDF_PATHSEGMENT;
+}
+extern "C" {
+    #[doc = " Create a new clip path, with a rectangle inserted."]
+    #[doc = ""]
+    #[doc = " Caller takes ownership of the returned FPDF_CLIPPATH. It should be freed with"]
+    #[doc = " FPDF_DestroyClipPath()."]
+    #[doc = ""]
+    #[doc = " left   - The left of the clip box."]
+    #[doc = " bottom - The bottom of the clip box."]
+    #[doc = " right  - The right of the clip box."]
+    #[doc = " top    - The top of the clip box."]
+    pub fn FPDF_CreateClipPath(left: f32, bottom: f32, right: f32, top: f32) -> FPDF_CLIPPATH;
+}
+extern "C" {
+    #[doc = " Destroy the clip path."]
+    #[doc = ""]
+    #[doc = " clipPath - A handle to the clip path. It will be invalid after this call."]
+    pub fn FPDF_DestroyClipPath(clipPath: FPDF_CLIPPATH);
+}
+extern "C" {
+    #[doc = " Clip the page content, the page content that outside the clipping region"]
+    #[doc = " become invisible."]
+    #[doc = ""]
+    #[doc = " A clip path will be inserted before the page content stream or content array."]
+    #[doc = " In this way, the page content will be clipped by this clip path."]
+    #[doc = ""]
+    #[doc = " page        - A page handle."]
+    #[doc = " clipPath    - A handle to the clip path. (Does not take ownership.)"]
+    pub fn FPDFPage_InsertClipPath(page: FPDF_PAGE, clipPath: FPDF_CLIPPATH);
+}
