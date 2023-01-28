@@ -37,6 +37,143 @@ pub const FPDFBitmap_Gray: u32 = 1;
 pub const FPDFBitmap_BGR: u32 = 2;
 pub const FPDFBitmap_BGRx: u32 = 3;
 pub const FPDFBitmap_BGRA: u32 = 4;
+pub const _STDINT_H: u32 = 1;
+pub const _FEATURES_H: u32 = 1;
+pub const _DEFAULT_SOURCE: u32 = 1;
+pub const __GLIBC_USE_ISOC2X: u32 = 0;
+pub const __USE_ISOC11: u32 = 1;
+pub const __USE_ISOC99: u32 = 1;
+pub const __USE_ISOC95: u32 = 1;
+pub const __USE_POSIX_IMPLICITLY: u32 = 1;
+pub const _POSIX_SOURCE: u32 = 1;
+pub const _POSIX_C_SOURCE: u32 = 200809;
+pub const __USE_POSIX: u32 = 1;
+pub const __USE_POSIX2: u32 = 1;
+pub const __USE_POSIX199309: u32 = 1;
+pub const __USE_POSIX199506: u32 = 1;
+pub const __USE_XOPEN2K: u32 = 1;
+pub const __USE_XOPEN2K8: u32 = 1;
+pub const _ATFILE_SOURCE: u32 = 1;
+pub const __WORDSIZE: u32 = 64;
+pub const __WORDSIZE_TIME64_COMPAT32: u32 = 1;
+pub const __SYSCALL_WORDSIZE: u32 = 64;
+pub const __TIMESIZE: u32 = 64;
+pub const __USE_MISC: u32 = 1;
+pub const __USE_ATFILE: u32 = 1;
+pub const __USE_FORTIFY_LEVEL: u32 = 0;
+pub const __GLIBC_USE_DEPRECATED_GETS: u32 = 0;
+pub const __GLIBC_USE_DEPRECATED_SCANF: u32 = 0;
+pub const _STDC_PREDEF_H: u32 = 1;
+pub const __STDC_IEC_559__: u32 = 1;
+pub const __STDC_IEC_60559_BFP__: u32 = 201404;
+pub const __STDC_IEC_559_COMPLEX__: u32 = 1;
+pub const __STDC_IEC_60559_COMPLEX__: u32 = 201404;
+pub const __STDC_ISO_10646__: u32 = 201706;
+pub const __GNU_LIBRARY__: u32 = 6;
+pub const __GLIBC__: u32 = 2;
+pub const __GLIBC_MINOR__: u32 = 36;
+pub const _SYS_CDEFS_H: u32 = 1;
+pub const __glibc_c99_flexarr_available: u32 = 1;
+pub const __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI: u32 = 0;
+pub const __HAVE_GENERIC_SELECTION: u32 = 1;
+pub const __GLIBC_USE_LIB_EXT2: u32 = 0;
+pub const __GLIBC_USE_IEC_60559_BFP_EXT: u32 = 0;
+pub const __GLIBC_USE_IEC_60559_BFP_EXT_C2X: u32 = 0;
+pub const __GLIBC_USE_IEC_60559_EXT: u32 = 0;
+pub const __GLIBC_USE_IEC_60559_FUNCS_EXT: u32 = 0;
+pub const __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X: u32 = 0;
+pub const __GLIBC_USE_IEC_60559_TYPES_EXT: u32 = 0;
+pub const _BITS_TYPES_H: u32 = 1;
+pub const _BITS_TYPESIZES_H: u32 = 1;
+pub const __OFF_T_MATCHES_OFF64_T: u32 = 1;
+pub const __INO_T_MATCHES_INO64_T: u32 = 1;
+pub const __RLIM_T_MATCHES_RLIM64_T: u32 = 1;
+pub const __STATFS_MATCHES_STATFS64: u32 = 1;
+pub const __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64: u32 = 1;
+pub const __FD_SETSIZE: u32 = 1024;
+pub const _BITS_TIME64_H: u32 = 1;
+pub const _BITS_WCHAR_H: u32 = 1;
+pub const _BITS_STDINT_INTN_H: u32 = 1;
+pub const _BITS_STDINT_UINTN_H: u32 = 1;
+pub const INT8_MIN: i32 = -128;
+pub const INT16_MIN: i32 = -32768;
+pub const INT32_MIN: i32 = -2147483648;
+pub const INT8_MAX: u32 = 127;
+pub const INT16_MAX: u32 = 32767;
+pub const INT32_MAX: u32 = 2147483647;
+pub const UINT8_MAX: u32 = 255;
+pub const UINT16_MAX: u32 = 65535;
+pub const UINT32_MAX: u32 = 4294967295;
+pub const INT_LEAST8_MIN: i32 = -128;
+pub const INT_LEAST16_MIN: i32 = -32768;
+pub const INT_LEAST32_MIN: i32 = -2147483648;
+pub const INT_LEAST8_MAX: u32 = 127;
+pub const INT_LEAST16_MAX: u32 = 32767;
+pub const INT_LEAST32_MAX: u32 = 2147483647;
+pub const UINT_LEAST8_MAX: u32 = 255;
+pub const UINT_LEAST16_MAX: u32 = 65535;
+pub const UINT_LEAST32_MAX: u32 = 4294967295;
+pub const INT_FAST8_MIN: i32 = -128;
+pub const INT_FAST16_MIN: i64 = -9223372036854775808;
+pub const INT_FAST32_MIN: i64 = -9223372036854775808;
+pub const INT_FAST8_MAX: u32 = 127;
+pub const INT_FAST16_MAX: u64 = 9223372036854775807;
+pub const INT_FAST32_MAX: u64 = 9223372036854775807;
+pub const UINT_FAST8_MAX: u32 = 255;
+pub const UINT_FAST16_MAX: i32 = -1;
+pub const UINT_FAST32_MAX: i32 = -1;
+pub const INTPTR_MIN: i64 = -9223372036854775808;
+pub const INTPTR_MAX: u64 = 9223372036854775807;
+pub const UINTPTR_MAX: i32 = -1;
+pub const PTRDIFF_MIN: i64 = -9223372036854775808;
+pub const PTRDIFF_MAX: u64 = 9223372036854775807;
+pub const SIG_ATOMIC_MIN: i32 = -2147483648;
+pub const SIG_ATOMIC_MAX: u32 = 2147483647;
+pub const SIZE_MAX: i32 = -1;
+pub const WINT_MIN: u32 = 0;
+pub const WINT_MAX: u32 = 4294967295;
+pub const FPDF_COLORSPACE_UNKNOWN: u32 = 0;
+pub const FPDF_COLORSPACE_DEVICEGRAY: u32 = 1;
+pub const FPDF_COLORSPACE_DEVICERGB: u32 = 2;
+pub const FPDF_COLORSPACE_DEVICECMYK: u32 = 3;
+pub const FPDF_COLORSPACE_CALGRAY: u32 = 4;
+pub const FPDF_COLORSPACE_CALRGB: u32 = 5;
+pub const FPDF_COLORSPACE_LAB: u32 = 6;
+pub const FPDF_COLORSPACE_ICCBASED: u32 = 7;
+pub const FPDF_COLORSPACE_SEPARATION: u32 = 8;
+pub const FPDF_COLORSPACE_DEVICEN: u32 = 9;
+pub const FPDF_COLORSPACE_INDEXED: u32 = 10;
+pub const FPDF_COLORSPACE_PATTERN: u32 = 11;
+pub const FPDF_PAGEOBJ_UNKNOWN: u32 = 0;
+pub const FPDF_PAGEOBJ_TEXT: u32 = 1;
+pub const FPDF_PAGEOBJ_PATH: u32 = 2;
+pub const FPDF_PAGEOBJ_IMAGE: u32 = 3;
+pub const FPDF_PAGEOBJ_SHADING: u32 = 4;
+pub const FPDF_PAGEOBJ_FORM: u32 = 5;
+pub const FPDF_SEGMENT_UNKNOWN: i32 = -1;
+pub const FPDF_SEGMENT_LINETO: u32 = 0;
+pub const FPDF_SEGMENT_BEZIERTO: u32 = 1;
+pub const FPDF_SEGMENT_MOVETO: u32 = 2;
+pub const FPDF_FILLMODE_NONE: u32 = 0;
+pub const FPDF_FILLMODE_ALTERNATE: u32 = 1;
+pub const FPDF_FILLMODE_WINDING: u32 = 2;
+pub const FPDF_FONT_TYPE1: u32 = 1;
+pub const FPDF_FONT_TRUETYPE: u32 = 2;
+pub const FPDF_LINECAP_BUTT: u32 = 0;
+pub const FPDF_LINECAP_ROUND: u32 = 1;
+pub const FPDF_LINECAP_PROJECTING_SQUARE: u32 = 2;
+pub const FPDF_LINEJOIN_MITER: u32 = 0;
+pub const FPDF_LINEJOIN_ROUND: u32 = 1;
+pub const FPDF_LINEJOIN_BEVEL: u32 = 2;
+pub const FPDF_PRINTMODE_EMF: u32 = 0;
+pub const FPDF_PRINTMODE_TEXTONLY: u32 = 1;
+pub const FPDF_PRINTMODE_POSTSCRIPT2: u32 = 2;
+pub const FPDF_PRINTMODE_POSTSCRIPT3: u32 = 3;
+pub const FPDF_PRINTMODE_POSTSCRIPT2_PASSTHROUGH: u32 = 4;
+pub const FPDF_PRINTMODE_POSTSCRIPT3_PASSTHROUGH: u32 = 5;
+pub const FPDF_PRINTMODE_EMF_IMAGE_MASKS: u32 = 6;
+pub const FPDF_PRINTMODE_POSTSCRIPT3_TYPE42: u32 = 7;
+pub const FPDF_PRINTMODE_POSTSCRIPT3_TYPE42_PASSTHROUGH: u32 = 8;
 pub type size_t = ::std::os::raw::c_ulong;
 pub type wchar_t = ::std::os::raw::c_int;
 #[doc = " Define 'max_align_t' to match the GCC definition."]
@@ -2359,4 +2496,1757 @@ extern "C" {
     #[doc = " page        - A page handle."]
     #[doc = " clipPath    - A handle to the clip path. (Does not take ownership.)"]
     pub fn FPDFPage_InsertClipPath(page: FPDF_PAGE, clipPath: FPDF_CLIPPATH);
+}
+#[doc = " Convenience types."]
+pub type __u_char = ::std::os::raw::c_uchar;
+pub type __u_short = ::std::os::raw::c_ushort;
+pub type __u_int = ::std::os::raw::c_uint;
+pub type __u_long = ::std::os::raw::c_ulong;
+#[doc = " Fixed-size types, underlying types depend on word size and compiler."]
+pub type __int8_t = ::std::os::raw::c_schar;
+pub type __uint8_t = ::std::os::raw::c_uchar;
+pub type __int16_t = ::std::os::raw::c_short;
+pub type __uint16_t = ::std::os::raw::c_ushort;
+pub type __int32_t = ::std::os::raw::c_int;
+pub type __uint32_t = ::std::os::raw::c_uint;
+pub type __int64_t = ::std::os::raw::c_long;
+pub type __uint64_t = ::std::os::raw::c_ulong;
+#[doc = " Smallest types with at least a given width."]
+pub type __int_least8_t = __int8_t;
+pub type __uint_least8_t = __uint8_t;
+pub type __int_least16_t = __int16_t;
+pub type __uint_least16_t = __uint16_t;
+pub type __int_least32_t = __int32_t;
+pub type __uint_least32_t = __uint32_t;
+pub type __int_least64_t = __int64_t;
+pub type __uint_least64_t = __uint64_t;
+pub type __quad_t = ::std::os::raw::c_long;
+pub type __u_quad_t = ::std::os::raw::c_ulong;
+pub type __intmax_t = ::std::os::raw::c_long;
+pub type __uintmax_t = ::std::os::raw::c_ulong;
+pub type __dev_t = ::std::os::raw::c_ulong;
+pub type __uid_t = ::std::os::raw::c_uint;
+pub type __gid_t = ::std::os::raw::c_uint;
+pub type __ino_t = ::std::os::raw::c_ulong;
+pub type __ino64_t = ::std::os::raw::c_ulong;
+pub type __mode_t = ::std::os::raw::c_uint;
+pub type __nlink_t = ::std::os::raw::c_ulong;
+pub type __off_t = ::std::os::raw::c_long;
+pub type __off64_t = ::std::os::raw::c_long;
+pub type __pid_t = ::std::os::raw::c_int;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __fsid_t {
+    pub __val: [::std::os::raw::c_int; 2usize],
+}
+#[test]
+fn bindgen_test_layout___fsid_t() {
+    assert_eq!(
+        ::std::mem::size_of::<__fsid_t>(),
+        8usize,
+        concat!("Size of: ", stringify!(__fsid_t))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<__fsid_t>(),
+        4usize,
+        concat!("Alignment of ", stringify!(__fsid_t))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<__fsid_t>())).__val as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__fsid_t),
+            "::",
+            stringify!(__val)
+        )
+    );
+}
+pub type __clock_t = ::std::os::raw::c_long;
+pub type __rlim_t = ::std::os::raw::c_ulong;
+pub type __rlim64_t = ::std::os::raw::c_ulong;
+pub type __id_t = ::std::os::raw::c_uint;
+pub type __time_t = ::std::os::raw::c_long;
+pub type __useconds_t = ::std::os::raw::c_uint;
+pub type __suseconds_t = ::std::os::raw::c_long;
+pub type __suseconds64_t = ::std::os::raw::c_long;
+pub type __daddr_t = ::std::os::raw::c_int;
+pub type __key_t = ::std::os::raw::c_int;
+pub type __clockid_t = ::std::os::raw::c_int;
+pub type __timer_t = *mut ::std::os::raw::c_void;
+pub type __blksize_t = ::std::os::raw::c_long;
+pub type __blkcnt_t = ::std::os::raw::c_long;
+pub type __blkcnt64_t = ::std::os::raw::c_long;
+pub type __fsblkcnt_t = ::std::os::raw::c_ulong;
+pub type __fsblkcnt64_t = ::std::os::raw::c_ulong;
+pub type __fsfilcnt_t = ::std::os::raw::c_ulong;
+pub type __fsfilcnt64_t = ::std::os::raw::c_ulong;
+pub type __fsword_t = ::std::os::raw::c_long;
+pub type __ssize_t = ::std::os::raw::c_long;
+pub type __syscall_slong_t = ::std::os::raw::c_long;
+pub type __syscall_ulong_t = ::std::os::raw::c_ulong;
+#[doc = " These few don't really vary by system, they always correspond"]
+#[doc = "to one of the other defined types."]
+pub type __loff_t = __off64_t;
+pub type __caddr_t = *mut ::std::os::raw::c_char;
+pub type __intptr_t = ::std::os::raw::c_long;
+pub type __socklen_t = ::std::os::raw::c_uint;
+#[doc = " C99: An integer type that can be accessed as an atomic entity,"]
+#[doc = "even in the presence of asynchronous interrupts."]
+#[doc = "It is not currently necessary for this to be machine-specific."]
+pub type __sig_atomic_t = ::std::os::raw::c_int;
+#[doc = " Signed."]
+pub type int_least8_t = __int_least8_t;
+pub type int_least16_t = __int_least16_t;
+pub type int_least32_t = __int_least32_t;
+pub type int_least64_t = __int_least64_t;
+#[doc = " Unsigned."]
+pub type uint_least8_t = __uint_least8_t;
+pub type uint_least16_t = __uint_least16_t;
+pub type uint_least32_t = __uint_least32_t;
+pub type uint_least64_t = __uint_least64_t;
+#[doc = " Signed."]
+pub type int_fast8_t = ::std::os::raw::c_schar;
+pub type int_fast16_t = ::std::os::raw::c_long;
+pub type int_fast32_t = ::std::os::raw::c_long;
+pub type int_fast64_t = ::std::os::raw::c_long;
+#[doc = " Unsigned."]
+pub type uint_fast8_t = ::std::os::raw::c_uchar;
+pub type uint_fast16_t = ::std::os::raw::c_ulong;
+pub type uint_fast32_t = ::std::os::raw::c_ulong;
+pub type uint_fast64_t = ::std::os::raw::c_ulong;
+#[doc = " Largest integral types."]
+pub type intmax_t = __intmax_t;
+pub type uintmax_t = __uintmax_t;
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Gets the decoded data from the thumbnail of |page| if it exists."]
+    #[doc = " This only modifies |buffer| if |buflen| less than or equal to the"]
+    #[doc = " size of the decoded data. Returns the size of the decoded"]
+    #[doc = " data or 0 if thumbnail DNE. Optional, pass null to just retrieve"]
+    #[doc = " the size of the buffer needed."]
+    #[doc = ""]
+    #[doc = "   page    - handle to a page."]
+    #[doc = "   buffer  - buffer for holding the decoded image data."]
+    #[doc = "   buflen  - length of the buffer in bytes."]
+    pub fn FPDFPage_GetDecodedThumbnailData(
+        page: FPDF_PAGE,
+        buffer: *mut ::std::os::raw::c_void,
+        buflen: ::std::os::raw::c_ulong,
+    ) -> ::std::os::raw::c_ulong;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Gets the raw data from the thumbnail of |page| if it exists."]
+    #[doc = " This only modifies |buffer| if |buflen| is less than or equal to"]
+    #[doc = " the size of the raw data. Returns the size of the raw data or 0"]
+    #[doc = " if thumbnail DNE. Optional, pass null to just retrieve the size"]
+    #[doc = " of the buffer needed."]
+    #[doc = ""]
+    #[doc = "   page    - handle to a page."]
+    #[doc = "   buffer  - buffer for holding the raw image data."]
+    #[doc = "   buflen  - length of the buffer in bytes."]
+    pub fn FPDFPage_GetRawThumbnailData(
+        page: FPDF_PAGE,
+        buffer: *mut ::std::os::raw::c_void,
+        buflen: ::std::os::raw::c_ulong,
+    ) -> ::std::os::raw::c_ulong;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Returns the thumbnail of |page| as a FPDF_BITMAP. Returns a nullptr"]
+    #[doc = " if unable to access the thumbnail's stream."]
+    #[doc = ""]
+    #[doc = "   page - handle to a page."]
+    pub fn FPDFPage_GetThumbnailAsBitmap(page: FPDF_PAGE) -> FPDF_BITMAP;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct FPDF_IMAGEOBJ_METADATA {
+    #[doc = " The image width in pixels."]
+    pub width: ::std::os::raw::c_uint,
+    #[doc = " The image height in pixels."]
+    pub height: ::std::os::raw::c_uint,
+    #[doc = " The image's horizontal pixel-per-inch."]
+    pub horizontal_dpi: f32,
+    #[doc = " The image's vertical pixel-per-inch."]
+    pub vertical_dpi: f32,
+    #[doc = " The number of bits used to represent each pixel."]
+    pub bits_per_pixel: ::std::os::raw::c_uint,
+    #[doc = " The image's colorspace. See above for the list of FPDF_COLORSPACE_*."]
+    pub colorspace: ::std::os::raw::c_int,
+    #[doc = " The image's marked content ID. Useful for pairing with associated alt-text."]
+    #[doc = " A value of -1 indicates no ID."]
+    pub marked_content_id: ::std::os::raw::c_int,
+}
+#[test]
+fn bindgen_test_layout_FPDF_IMAGEOBJ_METADATA() {
+    assert_eq!(
+        ::std::mem::size_of::<FPDF_IMAGEOBJ_METADATA>(),
+        28usize,
+        concat!("Size of: ", stringify!(FPDF_IMAGEOBJ_METADATA))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<FPDF_IMAGEOBJ_METADATA>(),
+        4usize,
+        concat!("Alignment of ", stringify!(FPDF_IMAGEOBJ_METADATA))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<FPDF_IMAGEOBJ_METADATA>())).width as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(FPDF_IMAGEOBJ_METADATA),
+            "::",
+            stringify!(width)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<FPDF_IMAGEOBJ_METADATA>())).height as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(FPDF_IMAGEOBJ_METADATA),
+            "::",
+            stringify!(height)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<FPDF_IMAGEOBJ_METADATA>())).horizontal_dpi as *const _ as usize
+        },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(FPDF_IMAGEOBJ_METADATA),
+            "::",
+            stringify!(horizontal_dpi)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<FPDF_IMAGEOBJ_METADATA>())).vertical_dpi as *const _ as usize
+        },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(FPDF_IMAGEOBJ_METADATA),
+            "::",
+            stringify!(vertical_dpi)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<FPDF_IMAGEOBJ_METADATA>())).bits_per_pixel as *const _ as usize
+        },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(FPDF_IMAGEOBJ_METADATA),
+            "::",
+            stringify!(bits_per_pixel)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<FPDF_IMAGEOBJ_METADATA>())).colorspace as *const _ as usize
+        },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(FPDF_IMAGEOBJ_METADATA),
+            "::",
+            stringify!(colorspace)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<FPDF_IMAGEOBJ_METADATA>())).marked_content_id as *const _
+                as usize
+        },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(FPDF_IMAGEOBJ_METADATA),
+            "::",
+            stringify!(marked_content_id)
+        )
+    );
+}
+extern "C" {
+    #[doc = " Create a new PDF document."]
+    #[doc = ""]
+    #[doc = " Returns a handle to a new document, or NULL on failure."]
+    pub fn FPDF_CreateNewDocument() -> FPDF_DOCUMENT;
+}
+extern "C" {
+    #[doc = " Create a new PDF page."]
+    #[doc = ""]
+    #[doc = "   document   - handle to document."]
+    #[doc = "   page_index - suggested 0-based index of the page to create. If it is larger"]
+    #[doc = "                than document's current last index(L), the created page index"]
+    #[doc = "                is the next available index -- L+1."]
+    #[doc = "   width      - the page width in points."]
+    #[doc = "   height     - the page height in points."]
+    #[doc = ""]
+    #[doc = " Returns the handle to the new page or NULL on failure."]
+    #[doc = ""]
+    #[doc = " The page should be closed with FPDF_ClosePage() when finished as"]
+    #[doc = " with any other page in the document."]
+    pub fn FPDFPage_New(
+        document: FPDF_DOCUMENT,
+        page_index: ::std::os::raw::c_int,
+        width: f64,
+        height: f64,
+    ) -> FPDF_PAGE;
+}
+extern "C" {
+    #[doc = " Delete the page at |page_index|."]
+    #[doc = ""]
+    #[doc = "   document   - handle to document."]
+    #[doc = "   page_index - the index of the page to delete."]
+    pub fn FPDFPage_Delete(document: FPDF_DOCUMENT, page_index: ::std::os::raw::c_int);
+}
+extern "C" {
+    #[doc = " Get the rotation of |page|."]
+    #[doc = ""]
+    #[doc = "   page - handle to a page"]
+    #[doc = ""]
+    #[doc = " Returns one of the following indicating the page rotation:"]
+    #[doc = "   0 - No rotation."]
+    #[doc = "   1 - Rotated 90 degrees clockwise."]
+    #[doc = "   2 - Rotated 180 degrees clockwise."]
+    #[doc = "   3 - Rotated 270 degrees clockwise."]
+    pub fn FPDFPage_GetRotation(page: FPDF_PAGE) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Set rotation for |page|."]
+    #[doc = ""]
+    #[doc = "   page   - handle to a page."]
+    #[doc = "   rotate - the rotation value, one of:"]
+    #[doc = "              0 - No rotation."]
+    #[doc = "              1 - Rotated 90 degrees clockwise."]
+    #[doc = "              2 - Rotated 180 degrees clockwise."]
+    #[doc = "              3 - Rotated 270 degrees clockwise."]
+    pub fn FPDFPage_SetRotation(page: FPDF_PAGE, rotate: ::std::os::raw::c_int);
+}
+extern "C" {
+    #[doc = " Insert |page_obj| into |page|."]
+    #[doc = ""]
+    #[doc = "   page     - handle to a page"]
+    #[doc = "   page_obj - handle to a page object. The |page_obj| will be automatically"]
+    #[doc = "              freed."]
+    pub fn FPDFPage_InsertObject(page: FPDF_PAGE, page_obj: FPDF_PAGEOBJECT);
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Remove |page_obj| from |page|."]
+    #[doc = ""]
+    #[doc = "   page     - handle to a page"]
+    #[doc = "   page_obj - handle to a page object to be removed."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    #[doc = ""]
+    #[doc = " Ownership is transferred to the caller. Call FPDFPageObj_Destroy() to free"]
+    #[doc = " it."]
+    pub fn FPDFPage_RemoveObject(page: FPDF_PAGE, page_obj: FPDF_PAGEOBJECT) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get number of page objects inside |page|."]
+    #[doc = ""]
+    #[doc = "   page - handle to a page."]
+    #[doc = ""]
+    #[doc = " Returns the number of objects in |page|."]
+    pub fn FPDFPage_CountObjects(page: FPDF_PAGE) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Get object in |page| at |index|."]
+    #[doc = ""]
+    #[doc = "   page  - handle to a page."]
+    #[doc = "   index - the index of a page object."]
+    #[doc = ""]
+    #[doc = " Returns the handle to the page object, or NULL on failed."]
+    pub fn FPDFPage_GetObject(page: FPDF_PAGE, index: ::std::os::raw::c_int) -> FPDF_PAGEOBJECT;
+}
+extern "C" {
+    #[doc = " Checks if |page| contains transparency."]
+    #[doc = ""]
+    #[doc = "   page - handle to a page."]
+    #[doc = ""]
+    #[doc = " Returns TRUE if |page| contains transparency."]
+    pub fn FPDFPage_HasTransparency(page: FPDF_PAGE) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Generate the content of |page|."]
+    #[doc = ""]
+    #[doc = "   page - handle to a page."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    #[doc = ""]
+    #[doc = " Before you save the page to a file, or reload the page, you must call"]
+    #[doc = " |FPDFPage_GenerateContent| or any changes to |page| will be lost."]
+    pub fn FPDFPage_GenerateContent(page: FPDF_PAGE) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Destroy |page_obj| by releasing its resources. |page_obj| must have been"]
+    #[doc = " created by FPDFPageObj_CreateNew{Path|Rect}() or"]
+    #[doc = " FPDFPageObj_New{Text|Image}Obj(). This function must be called on"]
+    #[doc = " newly-created objects if they are not added to a page through"]
+    #[doc = " FPDFPage_InsertObject() or to an annotation through FPDFAnnot_AppendObject()."]
+    #[doc = ""]
+    #[doc = "   page_obj - handle to a page object."]
+    pub fn FPDFPageObj_Destroy(page_obj: FPDF_PAGEOBJECT);
+}
+extern "C" {
+    #[doc = " Checks if |page_object| contains transparency."]
+    #[doc = ""]
+    #[doc = "   page_object - handle to a page object."]
+    #[doc = ""]
+    #[doc = " Returns TRUE if |page_object| contains transparency."]
+    pub fn FPDFPageObj_HasTransparency(page_object: FPDF_PAGEOBJECT) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get type of |page_object|."]
+    #[doc = ""]
+    #[doc = "   page_object - handle to a page object."]
+    #[doc = ""]
+    #[doc = " Returns one of the FPDF_PAGEOBJ_* values on success, FPDF_PAGEOBJ_UNKNOWN on"]
+    #[doc = " error."]
+    pub fn FPDFPageObj_GetType(page_object: FPDF_PAGEOBJECT) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Transform |page_object| by the given matrix."]
+    #[doc = ""]
+    #[doc = "   page_object - handle to a page object."]
+    #[doc = "   a           - matrix value."]
+    #[doc = "   b           - matrix value."]
+    #[doc = "   c           - matrix value."]
+    #[doc = "   d           - matrix value."]
+    #[doc = "   e           - matrix value."]
+    #[doc = "   f           - matrix value."]
+    #[doc = ""]
+    #[doc = " The matrix is composed as:"]
+    #[doc = "   |a c e|"]
+    #[doc = "   |b d f|"]
+    #[doc = " and can be used to scale, rotate, shear and translate the |page_object|."]
+    pub fn FPDFPageObj_Transform(
+        page_object: FPDF_PAGEOBJECT,
+        a: f64,
+        b: f64,
+        c: f64,
+        d: f64,
+        e: f64,
+        f: f64,
+    );
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the transform matrix of a page object."]
+    #[doc = ""]
+    #[doc = "   page_object - handle to a page object."]
+    #[doc = "   matrix      - pointer to struct to receive the matrix value."]
+    #[doc = ""]
+    #[doc = " The matrix is composed as:"]
+    #[doc = "   |a c e|"]
+    #[doc = "   |b d f|"]
+    #[doc = " and used to scale, rotate, shear and translate the page object."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFPageObj_GetMatrix(page_object: FPDF_PAGEOBJECT, matrix: *mut FS_MATRIX)
+        -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Set the transform matrix of a page object."]
+    #[doc = ""]
+    #[doc = "   page_object - handle to a page object."]
+    #[doc = "   matrix      - pointer to struct with the matrix value."]
+    #[doc = ""]
+    #[doc = " The matrix is composed as:"]
+    #[doc = "   |a c e|"]
+    #[doc = "   |b d f|"]
+    #[doc = " and can be used to scale, rotate, shear and translate the page object."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFPageObj_SetMatrix(path: FPDF_PAGEOBJECT, matrix: *const FS_MATRIX) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Transform all annotations in |page|."]
+    #[doc = ""]
+    #[doc = "   page - handle to a page."]
+    #[doc = "   a    - matrix value."]
+    #[doc = "   b    - matrix value."]
+    #[doc = "   c    - matrix value."]
+    #[doc = "   d    - matrix value."]
+    #[doc = "   e    - matrix value."]
+    #[doc = "   f    - matrix value."]
+    #[doc = ""]
+    #[doc = " The matrix is composed as:"]
+    #[doc = "   |a c e|"]
+    #[doc = "   |b d f|"]
+    #[doc = " and can be used to scale, rotate, shear and translate the |page| annotations."]
+    pub fn FPDFPage_TransformAnnots(
+        page: FPDF_PAGE,
+        a: f64,
+        b: f64,
+        c: f64,
+        d: f64,
+        e: f64,
+        f: f64,
+    );
+}
+extern "C" {
+    #[doc = " Create a new image object."]
+    #[doc = ""]
+    #[doc = "   document - handle to a document."]
+    #[doc = ""]
+    #[doc = " Returns a handle to a new image object."]
+    pub fn FPDFPageObj_NewImageObj(document: FPDF_DOCUMENT) -> FPDF_PAGEOBJECT;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get number of content marks in |page_object|."]
+    #[doc = ""]
+    #[doc = "   page_object - handle to a page object."]
+    #[doc = ""]
+    #[doc = " Returns the number of content marks in |page_object|, or -1 in case of"]
+    #[doc = " failure."]
+    pub fn FPDFPageObj_CountMarks(page_object: FPDF_PAGEOBJECT) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get content mark in |page_object| at |index|."]
+    #[doc = ""]
+    #[doc = "   page_object - handle to a page object."]
+    #[doc = "   index       - the index of a page object."]
+    #[doc = ""]
+    #[doc = " Returns the handle to the content mark, or NULL on failure. The handle is"]
+    #[doc = " still owned by the library, and it should not be freed directly. It becomes"]
+    #[doc = " invalid if the page object is destroyed, either directly or indirectly by"]
+    #[doc = " unloading the page."]
+    pub fn FPDFPageObj_GetMark(
+        page_object: FPDF_PAGEOBJECT,
+        index: ::std::os::raw::c_ulong,
+    ) -> FPDF_PAGEOBJECTMARK;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Add a new content mark to a |page_object|."]
+    #[doc = ""]
+    #[doc = "   page_object - handle to a page object."]
+    #[doc = "   name        - the name (tag) of the mark."]
+    #[doc = ""]
+    #[doc = " Returns the handle to the content mark, or NULL on failure. The handle is"]
+    #[doc = " still owned by the library, and it should not be freed directly. It becomes"]
+    #[doc = " invalid if the page object is destroyed, either directly or indirectly by"]
+    #[doc = " unloading the page."]
+    pub fn FPDFPageObj_AddMark(
+        page_object: FPDF_PAGEOBJECT,
+        name: FPDF_BYTESTRING,
+    ) -> FPDF_PAGEOBJECTMARK;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Removes a content |mark| from a |page_object|."]
+    #[doc = " The mark handle will be invalid after the removal."]
+    #[doc = ""]
+    #[doc = "   page_object - handle to a page object."]
+    #[doc = "   mark        - handle to a content mark in that object to remove."]
+    #[doc = ""]
+    #[doc = " Returns TRUE if the operation succeeded, FALSE if it failed."]
+    pub fn FPDFPageObj_RemoveMark(
+        page_object: FPDF_PAGEOBJECT,
+        mark: FPDF_PAGEOBJECTMARK,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the name of a content mark."]
+    #[doc = ""]
+    #[doc = "   mark       - handle to a content mark."]
+    #[doc = "   buffer     - buffer for holding the returned name in UTF-16LE. This is only"]
+    #[doc = "                modified if |buflen| is longer than the length of the name."]
+    #[doc = "                Optional, pass null to just retrieve the size of the buffer"]
+    #[doc = "                needed."]
+    #[doc = "   buflen     - length of the buffer."]
+    #[doc = "   out_buflen - pointer to variable that will receive the minimum buffer size"]
+    #[doc = "                to contain the name. Not filled if FALSE is returned."]
+    #[doc = ""]
+    #[doc = " Returns TRUE if the operation succeeded, FALSE if it failed."]
+    pub fn FPDFPageObjMark_GetName(
+        mark: FPDF_PAGEOBJECTMARK,
+        buffer: *mut ::std::os::raw::c_void,
+        buflen: ::std::os::raw::c_ulong,
+        out_buflen: *mut ::std::os::raw::c_ulong,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the number of key/value pair parameters in |mark|."]
+    #[doc = ""]
+    #[doc = "   mark   - handle to a content mark."]
+    #[doc = ""]
+    #[doc = " Returns the number of key/value pair parameters |mark|, or -1 in case of"]
+    #[doc = " failure."]
+    pub fn FPDFPageObjMark_CountParams(mark: FPDF_PAGEOBJECTMARK) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the key of a property in a content mark."]
+    #[doc = ""]
+    #[doc = "   mark       - handle to a content mark."]
+    #[doc = "   index      - index of the property."]
+    #[doc = "   buffer     - buffer for holding the returned key in UTF-16LE. This is only"]
+    #[doc = "                modified if |buflen| is longer than the length of the key."]
+    #[doc = "                Optional, pass null to just retrieve the size of the buffer"]
+    #[doc = "                needed."]
+    #[doc = "   buflen     - length of the buffer."]
+    #[doc = "   out_buflen - pointer to variable that will receive the minimum buffer size"]
+    #[doc = "                to contain the key. Not filled if FALSE is returned."]
+    #[doc = ""]
+    #[doc = " Returns TRUE if the operation was successful, FALSE otherwise."]
+    pub fn FPDFPageObjMark_GetParamKey(
+        mark: FPDF_PAGEOBJECTMARK,
+        index: ::std::os::raw::c_ulong,
+        buffer: *mut ::std::os::raw::c_void,
+        buflen: ::std::os::raw::c_ulong,
+        out_buflen: *mut ::std::os::raw::c_ulong,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the type of the value of a property in a content mark by key."]
+    #[doc = ""]
+    #[doc = "   mark   - handle to a content mark."]
+    #[doc = "   key    - string key of the property."]
+    #[doc = ""]
+    #[doc = " Returns the type of the value, or FPDF_OBJECT_UNKNOWN in case of failure."]
+    pub fn FPDFPageObjMark_GetParamValueType(
+        mark: FPDF_PAGEOBJECTMARK,
+        key: FPDF_BYTESTRING,
+    ) -> FPDF_OBJECT_TYPE;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the value of a number property in a content mark by key as int."]
+    #[doc = " FPDFPageObjMark_GetParamValueType() should have returned FPDF_OBJECT_NUMBER"]
+    #[doc = " for this property."]
+    #[doc = ""]
+    #[doc = "   mark      - handle to a content mark."]
+    #[doc = "   key       - string key of the property."]
+    #[doc = "   out_value - pointer to variable that will receive the value. Not filled if"]
+    #[doc = "               false is returned."]
+    #[doc = ""]
+    #[doc = " Returns TRUE if the key maps to a number value, FALSE otherwise."]
+    pub fn FPDFPageObjMark_GetParamIntValue(
+        mark: FPDF_PAGEOBJECTMARK,
+        key: FPDF_BYTESTRING,
+        out_value: *mut ::std::os::raw::c_int,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the value of a string property in a content mark by key."]
+    #[doc = ""]
+    #[doc = "   mark       - handle to a content mark."]
+    #[doc = "   key        - string key of the property."]
+    #[doc = "   buffer     - buffer for holding the returned value in UTF-16LE. This is"]
+    #[doc = "                only modified if |buflen| is longer than the length of the"]
+    #[doc = "                value."]
+    #[doc = "                Optional, pass null to just retrieve the size of the buffer"]
+    #[doc = "                needed."]
+    #[doc = "   buflen     - length of the buffer."]
+    #[doc = "   out_buflen - pointer to variable that will receive the minimum buffer size"]
+    #[doc = "                to contain the value. Not filled if FALSE is returned."]
+    #[doc = ""]
+    #[doc = " Returns TRUE if the key maps to a string/blob value, FALSE otherwise."]
+    pub fn FPDFPageObjMark_GetParamStringValue(
+        mark: FPDF_PAGEOBJECTMARK,
+        key: FPDF_BYTESTRING,
+        buffer: *mut ::std::os::raw::c_void,
+        buflen: ::std::os::raw::c_ulong,
+        out_buflen: *mut ::std::os::raw::c_ulong,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the value of a blob property in a content mark by key."]
+    #[doc = ""]
+    #[doc = "   mark       - handle to a content mark."]
+    #[doc = "   key        - string key of the property."]
+    #[doc = "   buffer     - buffer for holding the returned value. This is only modified"]
+    #[doc = "                if |buflen| is at least as long as the length of the value."]
+    #[doc = "                Optional, pass null to just retrieve the size of the buffer"]
+    #[doc = "                needed."]
+    #[doc = "   buflen     - length of the buffer."]
+    #[doc = "   out_buflen - pointer to variable that will receive the minimum buffer size"]
+    #[doc = "                to contain the value. Not filled if FALSE is returned."]
+    #[doc = ""]
+    #[doc = " Returns TRUE if the key maps to a string/blob value, FALSE otherwise."]
+    pub fn FPDFPageObjMark_GetParamBlobValue(
+        mark: FPDF_PAGEOBJECTMARK,
+        key: FPDF_BYTESTRING,
+        buffer: *mut ::std::os::raw::c_void,
+        buflen: ::std::os::raw::c_ulong,
+        out_buflen: *mut ::std::os::raw::c_ulong,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Set the value of an int property in a content mark by key. If a parameter"]
+    #[doc = " with key |key| exists, its value is set to |value|. Otherwise, it is added as"]
+    #[doc = " a new parameter."]
+    #[doc = ""]
+    #[doc = "   document    - handle to the document."]
+    #[doc = "   page_object - handle to the page object with the mark."]
+    #[doc = "   mark        - handle to a content mark."]
+    #[doc = "   key         - string key of the property."]
+    #[doc = "   value       - int value to set."]
+    #[doc = ""]
+    #[doc = " Returns TRUE if the operation succeeded, FALSE otherwise."]
+    pub fn FPDFPageObjMark_SetIntParam(
+        document: FPDF_DOCUMENT,
+        page_object: FPDF_PAGEOBJECT,
+        mark: FPDF_PAGEOBJECTMARK,
+        key: FPDF_BYTESTRING,
+        value: ::std::os::raw::c_int,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Set the value of a string property in a content mark by key. If a parameter"]
+    #[doc = " with key |key| exists, its value is set to |value|. Otherwise, it is added as"]
+    #[doc = " a new parameter."]
+    #[doc = ""]
+    #[doc = "   document    - handle to the document."]
+    #[doc = "   page_object - handle to the page object with the mark."]
+    #[doc = "   mark        - handle to a content mark."]
+    #[doc = "   key         - string key of the property."]
+    #[doc = "   value       - string value to set."]
+    #[doc = ""]
+    #[doc = " Returns TRUE if the operation succeeded, FALSE otherwise."]
+    pub fn FPDFPageObjMark_SetStringParam(
+        document: FPDF_DOCUMENT,
+        page_object: FPDF_PAGEOBJECT,
+        mark: FPDF_PAGEOBJECTMARK,
+        key: FPDF_BYTESTRING,
+        value: FPDF_BYTESTRING,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Set the value of a blob property in a content mark by key. If a parameter"]
+    #[doc = " with key |key| exists, its value is set to |value|. Otherwise, it is added as"]
+    #[doc = " a new parameter."]
+    #[doc = ""]
+    #[doc = "   document    - handle to the document."]
+    #[doc = "   page_object - handle to the page object with the mark."]
+    #[doc = "   mark        - handle to a content mark."]
+    #[doc = "   key         - string key of the property."]
+    #[doc = "   value       - pointer to blob value to set."]
+    #[doc = "   value_len   - size in bytes of |value|."]
+    #[doc = ""]
+    #[doc = " Returns TRUE if the operation succeeded, FALSE otherwise."]
+    pub fn FPDFPageObjMark_SetBlobParam(
+        document: FPDF_DOCUMENT,
+        page_object: FPDF_PAGEOBJECT,
+        mark: FPDF_PAGEOBJECTMARK,
+        key: FPDF_BYTESTRING,
+        value: *mut ::std::os::raw::c_void,
+        value_len: ::std::os::raw::c_ulong,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Removes a property from a content mark by key."]
+    #[doc = ""]
+    #[doc = "   page_object - handle to the page object with the mark."]
+    #[doc = "   mark        - handle to a content mark."]
+    #[doc = "   key         - string key of the property."]
+    #[doc = ""]
+    #[doc = " Returns TRUE if the operation succeeded, FALSE otherwise."]
+    pub fn FPDFPageObjMark_RemoveParam(
+        page_object: FPDF_PAGEOBJECT,
+        mark: FPDF_PAGEOBJECTMARK,
+        key: FPDF_BYTESTRING,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Load an image from a JPEG image file and then set it into |image_object|."]
+    #[doc = ""]
+    #[doc = "   pages        - pointer to the start of all loaded pages, may be NULL."]
+    #[doc = "   count        - number of |pages|, may be 0."]
+    #[doc = "   image_object - handle to an image object."]
+    #[doc = "   file_access  - file access handler which specifies the JPEG image file."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    #[doc = ""]
+    #[doc = " The image object might already have an associated image, which is shared and"]
+    #[doc = " cached by the loaded pages. In that case, we need to clear the cached image"]
+    #[doc = " for all the loaded pages. Pass |pages| and page count (|count|) to this API"]
+    #[doc = " to clear the image cache. If the image is not previously shared, or NULL is a"]
+    #[doc = " valid |pages| value."]
+    pub fn FPDFImageObj_LoadJpegFile(
+        pages: *mut FPDF_PAGE,
+        count: ::std::os::raw::c_int,
+        image_object: FPDF_PAGEOBJECT,
+        file_access: *mut FPDF_FILEACCESS,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Load an image from a JPEG image file and then set it into |image_object|."]
+    #[doc = ""]
+    #[doc = "   pages        - pointer to the start of all loaded pages, may be NULL."]
+    #[doc = "   count        - number of |pages|, may be 0."]
+    #[doc = "   image_object - handle to an image object."]
+    #[doc = "   file_access  - file access handler which specifies the JPEG image file."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    #[doc = ""]
+    #[doc = " The image object might already have an associated image, which is shared and"]
+    #[doc = " cached by the loaded pages. In that case, we need to clear the cached image"]
+    #[doc = " for all the loaded pages. Pass |pages| and page count (|count|) to this API"]
+    #[doc = " to clear the image cache. If the image is not previously shared, or NULL is a"]
+    #[doc = " valid |pages| value. This function loads the JPEG image inline, so the image"]
+    #[doc = " content is copied to the file. This allows |file_access| and its associated"]
+    #[doc = " data to be deleted after this function returns."]
+    pub fn FPDFImageObj_LoadJpegFileInline(
+        pages: *mut FPDF_PAGE,
+        count: ::std::os::raw::c_int,
+        image_object: FPDF_PAGEOBJECT,
+        file_access: *mut FPDF_FILEACCESS,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " TODO(thestig): Start deprecating this once FPDFPageObj_SetMatrix() is stable."]
+    #[doc = ""]
+    #[doc = " Set the transform matrix of |image_object|."]
+    #[doc = ""]
+    #[doc = "   image_object - handle to an image object."]
+    #[doc = "   a            - matrix value."]
+    #[doc = "   b            - matrix value."]
+    #[doc = "   c            - matrix value."]
+    #[doc = "   d            - matrix value."]
+    #[doc = "   e            - matrix value."]
+    #[doc = "   f            - matrix value."]
+    #[doc = ""]
+    #[doc = " The matrix is composed as:"]
+    #[doc = "   |a c e|"]
+    #[doc = "   |b d f|"]
+    #[doc = " and can be used to scale, rotate, shear and translate the |image_object|."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFImageObj_SetMatrix(
+        image_object: FPDF_PAGEOBJECT,
+        a: f64,
+        b: f64,
+        c: f64,
+        d: f64,
+        e: f64,
+        f: f64,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Set |bitmap| to |image_object|."]
+    #[doc = ""]
+    #[doc = "   pages        - pointer to the start of all loaded pages, may be NULL."]
+    #[doc = "   count        - number of |pages|, may be 0."]
+    #[doc = "   image_object - handle to an image object."]
+    #[doc = "   bitmap       - handle of the bitmap."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFImageObj_SetBitmap(
+        pages: *mut FPDF_PAGE,
+        count: ::std::os::raw::c_int,
+        image_object: FPDF_PAGEOBJECT,
+        bitmap: FPDF_BITMAP,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get a bitmap rasterization of |image_object|. FPDFImageObj_GetBitmap() only"]
+    #[doc = " operates on |image_object| and does not take the associated image mask into"]
+    #[doc = " account. It also ignores the matrix for |image_object|."]
+    #[doc = " The returned bitmap will be owned by the caller, and FPDFBitmap_Destroy()"]
+    #[doc = " must be called on the returned bitmap when it is no longer needed."]
+    #[doc = ""]
+    #[doc = "   image_object - handle to an image object."]
+    #[doc = ""]
+    #[doc = " Returns the bitmap."]
+    pub fn FPDFImageObj_GetBitmap(image_object: FPDF_PAGEOBJECT) -> FPDF_BITMAP;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get a bitmap rasterization of |image_object| that takes the image mask and"]
+    #[doc = " image matrix into account. To render correctly, the caller must provide the"]
+    #[doc = " |document| associated with |image_object|. If there is a |page| associated"]
+    #[doc = " with |image_object|, the caller should provide that as well."]
+    #[doc = " The returned bitmap will be owned by the caller, and FPDFBitmap_Destroy()"]
+    #[doc = " must be called on the returned bitmap when it is no longer needed."]
+    #[doc = ""]
+    #[doc = "   document     - handle to a document associated with |image_object|."]
+    #[doc = "   page         - handle to an optional page associated with |image_object|."]
+    #[doc = "   image_object - handle to an image object."]
+    #[doc = ""]
+    #[doc = " Returns the bitmap or NULL on failure."]
+    pub fn FPDFImageObj_GetRenderedBitmap(
+        document: FPDF_DOCUMENT,
+        page: FPDF_PAGE,
+        image_object: FPDF_PAGEOBJECT,
+    ) -> FPDF_BITMAP;
+}
+extern "C" {
+    #[doc = " Get the decoded image data of |image_object|. The decoded data is the"]
+    #[doc = " uncompressed image data, i.e. the raw image data after having all filters"]
+    #[doc = " applied. |buffer| is only modified if |buflen| is longer than the length of"]
+    #[doc = " the decoded image data."]
+    #[doc = ""]
+    #[doc = "   image_object - handle to an image object."]
+    #[doc = "   buffer       - buffer for holding the decoded image data."]
+    #[doc = "   buflen       - length of the buffer in bytes."]
+    #[doc = ""]
+    #[doc = " Returns the length of the decoded image data."]
+    pub fn FPDFImageObj_GetImageDataDecoded(
+        image_object: FPDF_PAGEOBJECT,
+        buffer: *mut ::std::os::raw::c_void,
+        buflen: ::std::os::raw::c_ulong,
+    ) -> ::std::os::raw::c_ulong;
+}
+extern "C" {
+    #[doc = " Get the raw image data of |image_object|. The raw data is the image data as"]
+    #[doc = " stored in the PDF without applying any filters. |buffer| is only modified if"]
+    #[doc = " |buflen| is longer than the length of the raw image data."]
+    #[doc = ""]
+    #[doc = "   image_object - handle to an image object."]
+    #[doc = "   buffer       - buffer for holding the raw image data."]
+    #[doc = "   buflen       - length of the buffer in bytes."]
+    #[doc = ""]
+    #[doc = " Returns the length of the raw image data."]
+    pub fn FPDFImageObj_GetImageDataRaw(
+        image_object: FPDF_PAGEOBJECT,
+        buffer: *mut ::std::os::raw::c_void,
+        buflen: ::std::os::raw::c_ulong,
+    ) -> ::std::os::raw::c_ulong;
+}
+extern "C" {
+    #[doc = " Get the number of filters (i.e. decoders) of the image in |image_object|."]
+    #[doc = ""]
+    #[doc = "   image_object - handle to an image object."]
+    #[doc = ""]
+    #[doc = " Returns the number of |image_object|'s filters."]
+    pub fn FPDFImageObj_GetImageFilterCount(image_object: FPDF_PAGEOBJECT)
+        -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Get the filter at |index| of |image_object|'s list of filters. Note that the"]
+    #[doc = " filters need to be applied in order, i.e. the first filter should be applied"]
+    #[doc = " first, then the second, etc. |buffer| is only modified if |buflen| is longer"]
+    #[doc = " than the length of the filter string."]
+    #[doc = ""]
+    #[doc = "   image_object - handle to an image object."]
+    #[doc = "   index        - the index of the filter requested."]
+    #[doc = "   buffer       - buffer for holding filter string, encoded in UTF-8."]
+    #[doc = "   buflen       - length of the buffer."]
+    #[doc = ""]
+    #[doc = " Returns the length of the filter string."]
+    pub fn FPDFImageObj_GetImageFilter(
+        image_object: FPDF_PAGEOBJECT,
+        index: ::std::os::raw::c_int,
+        buffer: *mut ::std::os::raw::c_void,
+        buflen: ::std::os::raw::c_ulong,
+    ) -> ::std::os::raw::c_ulong;
+}
+extern "C" {
+    #[doc = " Get the image metadata of |image_object|, including dimension, DPI, bits per"]
+    #[doc = " pixel, and colorspace. If the |image_object| is not an image object or if it"]
+    #[doc = " does not have an image, then the return value will be false. Otherwise,"]
+    #[doc = " failure to retrieve any specific parameter would result in its value being 0."]
+    #[doc = ""]
+    #[doc = "   image_object - handle to an image object."]
+    #[doc = "   page         - handle to the page that |image_object| is on. Required for"]
+    #[doc = "                  retrieving the image's bits per pixel and colorspace."]
+    #[doc = "   metadata     - receives the image metadata; must not be NULL."]
+    #[doc = ""]
+    #[doc = " Returns true if successful."]
+    pub fn FPDFImageObj_GetImageMetadata(
+        image_object: FPDF_PAGEOBJECT,
+        page: FPDF_PAGE,
+        metadata: *mut FPDF_IMAGEOBJ_METADATA,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Create a new path object at an initial position."]
+    #[doc = ""]
+    #[doc = "   x - initial horizontal position."]
+    #[doc = "   y - initial vertical position."]
+    #[doc = ""]
+    #[doc = " Returns a handle to a new path object."]
+    pub fn FPDFPageObj_CreateNewPath(x: f32, y: f32) -> FPDF_PAGEOBJECT;
+}
+extern "C" {
+    #[doc = " Create a closed path consisting of a rectangle."]
+    #[doc = ""]
+    #[doc = "   x - horizontal position for the left boundary of the rectangle."]
+    #[doc = "   y - vertical position for the bottom boundary of the rectangle."]
+    #[doc = "   w - width of the rectangle."]
+    #[doc = "   h - height of the rectangle."]
+    #[doc = ""]
+    #[doc = " Returns a handle to the new path object."]
+    pub fn FPDFPageObj_CreateNewRect(x: f32, y: f32, w: f32, h: f32) -> FPDF_PAGEOBJECT;
+}
+extern "C" {
+    #[doc = " Get the bounding box of |page_object|."]
+    #[doc = ""]
+    #[doc = " page_object  - handle to a page object."]
+    #[doc = " left         - pointer where the left coordinate will be stored"]
+    #[doc = " bottom       - pointer where the bottom coordinate will be stored"]
+    #[doc = " right        - pointer where the right coordinate will be stored"]
+    #[doc = " top          - pointer where the top coordinate will be stored"]
+    #[doc = ""]
+    #[doc = " On success, returns TRUE and fills in the 4 coordinates."]
+    pub fn FPDFPageObj_GetBounds(
+        page_object: FPDF_PAGEOBJECT,
+        left: *mut f32,
+        bottom: *mut f32,
+        right: *mut f32,
+        top: *mut f32,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the quad points that bounds |page_object|."]
+    #[doc = ""]
+    #[doc = " page_object  - handle to a page object."]
+    #[doc = " quad_points  - pointer where the quadrilateral points will be stored."]
+    #[doc = ""]
+    #[doc = " On success, returns TRUE and fills in |quad_points|."]
+    #[doc = ""]
+    #[doc = " Similar to FPDFPageObj_GetBounds(), this returns the bounds of a page"]
+    #[doc = " object. When the object is rotated by a non-multiple of 90 degrees, this API"]
+    #[doc = " returns a tighter bound that cannot be represented with just the 4 sides of"]
+    #[doc = " a rectangle."]
+    #[doc = ""]
+    #[doc = " Currently only works the following |page_object| types: FPDF_PAGEOBJ_TEXT and"]
+    #[doc = " FPDF_PAGEOBJ_IMAGE."]
+    pub fn FPDFPageObj_GetRotatedBounds(
+        page_object: FPDF_PAGEOBJECT,
+        quad_points: *mut FS_QUADPOINTSF,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Set the blend mode of |page_object|."]
+    #[doc = ""]
+    #[doc = " page_object  - handle to a page object."]
+    #[doc = " blend_mode   - string containing the blend mode."]
+    #[doc = ""]
+    #[doc = " Blend mode can be one of following: Color, ColorBurn, ColorDodge, Darken,"]
+    #[doc = " Difference, Exclusion, HardLight, Hue, Lighten, Luminosity, Multiply, Normal,"]
+    #[doc = " Overlay, Saturation, Screen, SoftLight"]
+    pub fn FPDFPageObj_SetBlendMode(page_object: FPDF_PAGEOBJECT, blend_mode: FPDF_BYTESTRING);
+}
+extern "C" {
+    #[doc = " Set the stroke RGBA of a page object. Range of values: 0 - 255."]
+    #[doc = ""]
+    #[doc = " page_object  - the handle to the page object."]
+    #[doc = " R            - the red component for the object's stroke color."]
+    #[doc = " G            - the green component for the object's stroke color."]
+    #[doc = " B            - the blue component for the object's stroke color."]
+    #[doc = " A            - the stroke alpha for the object."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFPageObj_SetStrokeColor(
+        page_object: FPDF_PAGEOBJECT,
+        R: ::std::os::raw::c_uint,
+        G: ::std::os::raw::c_uint,
+        B: ::std::os::raw::c_uint,
+        A: ::std::os::raw::c_uint,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get the stroke RGBA of a page object. Range of values: 0 - 255."]
+    #[doc = ""]
+    #[doc = " page_object  - the handle to the page object."]
+    #[doc = " R            - the red component of the path stroke color."]
+    #[doc = " G            - the green component of the object's stroke color."]
+    #[doc = " B            - the blue component of the object's stroke color."]
+    #[doc = " A            - the stroke alpha of the object."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFPageObj_GetStrokeColor(
+        page_object: FPDF_PAGEOBJECT,
+        R: *mut ::std::os::raw::c_uint,
+        G: *mut ::std::os::raw::c_uint,
+        B: *mut ::std::os::raw::c_uint,
+        A: *mut ::std::os::raw::c_uint,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Set the stroke width of a page object."]
+    #[doc = ""]
+    #[doc = " path   - the handle to the page object."]
+    #[doc = " width  - the width of the stroke."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success"]
+    pub fn FPDFPageObj_SetStrokeWidth(page_object: FPDF_PAGEOBJECT, width: f32) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get the stroke width of a page object."]
+    #[doc = ""]
+    #[doc = " path   - the handle to the page object."]
+    #[doc = " width  - the width of the stroke."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success"]
+    pub fn FPDFPageObj_GetStrokeWidth(page_object: FPDF_PAGEOBJECT, width: *mut f32) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get the line join of |page_object|."]
+    #[doc = ""]
+    #[doc = " page_object  - handle to a page object."]
+    #[doc = ""]
+    #[doc = " Returns the line join, or -1 on failure."]
+    #[doc = " Line join can be one of following: FPDF_LINEJOIN_MITER, FPDF_LINEJOIN_ROUND,"]
+    #[doc = " FPDF_LINEJOIN_BEVEL"]
+    pub fn FPDFPageObj_GetLineJoin(page_object: FPDF_PAGEOBJECT) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Set the line join of |page_object|."]
+    #[doc = ""]
+    #[doc = " page_object  - handle to a page object."]
+    #[doc = " line_join    - line join"]
+    #[doc = ""]
+    #[doc = " Line join can be one of following: FPDF_LINEJOIN_MITER, FPDF_LINEJOIN_ROUND,"]
+    #[doc = " FPDF_LINEJOIN_BEVEL"]
+    pub fn FPDFPageObj_SetLineJoin(
+        page_object: FPDF_PAGEOBJECT,
+        line_join: ::std::os::raw::c_int,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get the line cap of |page_object|."]
+    #[doc = ""]
+    #[doc = " page_object - handle to a page object."]
+    #[doc = ""]
+    #[doc = " Returns the line cap, or -1 on failure."]
+    #[doc = " Line cap can be one of following: FPDF_LINECAP_BUTT, FPDF_LINECAP_ROUND,"]
+    #[doc = " FPDF_LINECAP_PROJECTING_SQUARE"]
+    pub fn FPDFPageObj_GetLineCap(page_object: FPDF_PAGEOBJECT) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Set the line cap of |page_object|."]
+    #[doc = ""]
+    #[doc = " page_object - handle to a page object."]
+    #[doc = " line_cap    - line cap"]
+    #[doc = ""]
+    #[doc = " Line cap can be one of following: FPDF_LINECAP_BUTT, FPDF_LINECAP_ROUND,"]
+    #[doc = " FPDF_LINECAP_PROJECTING_SQUARE"]
+    pub fn FPDFPageObj_SetLineCap(
+        page_object: FPDF_PAGEOBJECT,
+        line_cap: ::std::os::raw::c_int,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Set the fill RGBA of a page object. Range of values: 0 - 255."]
+    #[doc = ""]
+    #[doc = " page_object  - the handle to the page object."]
+    #[doc = " R            - the red component for the object's fill color."]
+    #[doc = " G            - the green component for the object's fill color."]
+    #[doc = " B            - the blue component for the object's fill color."]
+    #[doc = " A            - the fill alpha for the object."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFPageObj_SetFillColor(
+        page_object: FPDF_PAGEOBJECT,
+        R: ::std::os::raw::c_uint,
+        G: ::std::os::raw::c_uint,
+        B: ::std::os::raw::c_uint,
+        A: ::std::os::raw::c_uint,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get the fill RGBA of a page object. Range of values: 0 - 255."]
+    #[doc = ""]
+    #[doc = " page_object  - the handle to the page object."]
+    #[doc = " R            - the red component of the object's fill color."]
+    #[doc = " G            - the green component of the object's fill color."]
+    #[doc = " B            - the blue component of the object's fill color."]
+    #[doc = " A            - the fill alpha of the object."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFPageObj_GetFillColor(
+        page_object: FPDF_PAGEOBJECT,
+        R: *mut ::std::os::raw::c_uint,
+        G: *mut ::std::os::raw::c_uint,
+        B: *mut ::std::os::raw::c_uint,
+        A: *mut ::std::os::raw::c_uint,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the line dash |phase| of |page_object|."]
+    #[doc = ""]
+    #[doc = " page_object - handle to a page object."]
+    #[doc = " phase - pointer where the dashing phase will be stored."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFPageObj_GetDashPhase(page_object: FPDF_PAGEOBJECT, phase: *mut f32) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Set the line dash phase of |page_object|."]
+    #[doc = ""]
+    #[doc = " page_object - handle to a page object."]
+    #[doc = " phase - line dash phase."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFPageObj_SetDashPhase(page_object: FPDF_PAGEOBJECT, phase: f32) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the line dash array of |page_object|."]
+    #[doc = ""]
+    #[doc = " page_object - handle to a page object."]
+    #[doc = ""]
+    #[doc = " Returns the line dash array size or -1 on failure."]
+    pub fn FPDFPageObj_GetDashCount(page_object: FPDF_PAGEOBJECT) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the line dash array of |page_object|."]
+    #[doc = ""]
+    #[doc = " page_object - handle to a page object."]
+    #[doc = " dash_array - pointer where the dashing array will be stored."]
+    #[doc = " dash_count - number of elements in |dash_array|."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFPageObj_GetDashArray(
+        page_object: FPDF_PAGEOBJECT,
+        dash_array: *mut f32,
+        dash_count: size_t,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Set the line dash array of |page_object|."]
+    #[doc = ""]
+    #[doc = " page_object - handle to a page object."]
+    #[doc = " dash_array - the dash array."]
+    #[doc = " dash_count - number of elements in |dash_array|."]
+    #[doc = " phase - the line dash phase."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFPageObj_SetDashArray(
+        page_object: FPDF_PAGEOBJECT,
+        dash_array: *const f32,
+        dash_count: size_t,
+        phase: f32,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get number of segments inside |path|."]
+    #[doc = ""]
+    #[doc = "   path - handle to a path."]
+    #[doc = ""]
+    #[doc = " A segment is a command, created by e.g. FPDFPath_MoveTo(),"]
+    #[doc = " FPDFPath_LineTo() or FPDFPath_BezierTo()."]
+    #[doc = ""]
+    #[doc = " Returns the number of objects in |path| or -1 on failure."]
+    pub fn FPDFPath_CountSegments(path: FPDF_PAGEOBJECT) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Get segment in |path| at |index|."]
+    #[doc = ""]
+    #[doc = "   path  - handle to a path."]
+    #[doc = "   index - the index of a segment."]
+    #[doc = ""]
+    #[doc = " Returns the handle to the segment, or NULL on faiure."]
+    pub fn FPDFPath_GetPathSegment(
+        path: FPDF_PAGEOBJECT,
+        index: ::std::os::raw::c_int,
+    ) -> FPDF_PATHSEGMENT;
+}
+extern "C" {
+    #[doc = " Get coordinates of |segment|."]
+    #[doc = ""]
+    #[doc = "   segment  - handle to a segment."]
+    #[doc = "   x      - the horizontal position of the segment."]
+    #[doc = "   y      - the vertical position of the segment."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success, otherwise |x| and |y| is not set."]
+    pub fn FPDFPathSegment_GetPoint(
+        segment: FPDF_PATHSEGMENT,
+        x: *mut f32,
+        y: *mut f32,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get type of |segment|."]
+    #[doc = ""]
+    #[doc = "   segment - handle to a segment."]
+    #[doc = ""]
+    #[doc = " Returns one of the FPDF_SEGMENT_* values on success,"]
+    #[doc = " FPDF_SEGMENT_UNKNOWN on error."]
+    pub fn FPDFPathSegment_GetType(segment: FPDF_PATHSEGMENT) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Gets if the |segment| closes the current subpath of a given path."]
+    #[doc = ""]
+    #[doc = "   segment - handle to a segment."]
+    #[doc = ""]
+    #[doc = " Returns close flag for non-NULL segment, FALSE otherwise."]
+    pub fn FPDFPathSegment_GetClose(segment: FPDF_PATHSEGMENT) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Move a path's current point."]
+    #[doc = ""]
+    #[doc = " path   - the handle to the path object."]
+    #[doc = " x      - the horizontal position of the new current point."]
+    #[doc = " y      - the vertical position of the new current point."]
+    #[doc = ""]
+    #[doc = " Note that no line will be created between the previous current point and the"]
+    #[doc = " new one."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success"]
+    pub fn FPDFPath_MoveTo(path: FPDF_PAGEOBJECT, x: f32, y: f32) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Add a line between the current point and a new point in the path."]
+    #[doc = ""]
+    #[doc = " path   - the handle to the path object."]
+    #[doc = " x      - the horizontal position of the new point."]
+    #[doc = " y      - the vertical position of the new point."]
+    #[doc = ""]
+    #[doc = " The path's current point is changed to (x, y)."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success"]
+    pub fn FPDFPath_LineTo(path: FPDF_PAGEOBJECT, x: f32, y: f32) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Add a cubic Bezier curve to the given path, starting at the current point."]
+    #[doc = ""]
+    #[doc = " path   - the handle to the path object."]
+    #[doc = " x1     - the horizontal position of the first Bezier control point."]
+    #[doc = " y1     - the vertical position of the first Bezier control point."]
+    #[doc = " x2     - the horizontal position of the second Bezier control point."]
+    #[doc = " y2     - the vertical position of the second Bezier control point."]
+    #[doc = " x3     - the horizontal position of the ending point of the Bezier curve."]
+    #[doc = " y3     - the vertical position of the ending point of the Bezier curve."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success"]
+    pub fn FPDFPath_BezierTo(
+        path: FPDF_PAGEOBJECT,
+        x1: f32,
+        y1: f32,
+        x2: f32,
+        y2: f32,
+        x3: f32,
+        y3: f32,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Close the current subpath of a given path."]
+    #[doc = ""]
+    #[doc = " path   - the handle to the path object."]
+    #[doc = ""]
+    #[doc = " This will add a line between the current point and the initial point of the"]
+    #[doc = " subpath, thus terminating the current subpath."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success"]
+    pub fn FPDFPath_Close(path: FPDF_PAGEOBJECT) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Set the drawing mode of a path."]
+    #[doc = ""]
+    #[doc = " path     - the handle to the path object."]
+    #[doc = " fillmode - the filling mode to be set: one of the FPDF_FILLMODE_* flags."]
+    #[doc = " stroke   - a boolean specifying if the path should be stroked or not."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success"]
+    pub fn FPDFPath_SetDrawMode(
+        path: FPDF_PAGEOBJECT,
+        fillmode: ::std::os::raw::c_int,
+        stroke: FPDF_BOOL,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get the drawing mode of a path."]
+    #[doc = ""]
+    #[doc = " path     - the handle to the path object."]
+    #[doc = " fillmode - the filling mode of the path: one of the FPDF_FILLMODE_* flags."]
+    #[doc = " stroke   - a boolean specifying if the path is stroked or not."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success"]
+    pub fn FPDFPath_GetDrawMode(
+        path: FPDF_PAGEOBJECT,
+        fillmode: *mut ::std::os::raw::c_int,
+        stroke: *mut FPDF_BOOL,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Create a new text object using one of the standard PDF fonts."]
+    #[doc = ""]
+    #[doc = " document   - handle to the document."]
+    #[doc = " font       - string containing the font name, without spaces."]
+    #[doc = " font_size  - the font size for the new text object."]
+    #[doc = ""]
+    #[doc = " Returns a handle to a new text object, or NULL on failure"]
+    pub fn FPDFPageObj_NewTextObj(
+        document: FPDF_DOCUMENT,
+        font: FPDF_BYTESTRING,
+        font_size: f32,
+    ) -> FPDF_PAGEOBJECT;
+}
+extern "C" {
+    #[doc = " Set the text for a text object. If it had text, it will be replaced."]
+    #[doc = ""]
+    #[doc = " text_object  - handle to the text object."]
+    #[doc = " text         - the UTF-16LE encoded string containing the text to be added."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success"]
+    pub fn FPDFText_SetText(text_object: FPDF_PAGEOBJECT, text: FPDF_WIDESTRING) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Set the text using charcodes for a text object. If it had text, it will be"]
+    #[doc = " replaced."]
+    #[doc = ""]
+    #[doc = " text_object  - handle to the text object."]
+    #[doc = " charcodes    - pointer to an array of charcodes to be added."]
+    #[doc = " count        - number of elements in |charcodes|."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success"]
+    pub fn FPDFText_SetCharcodes(
+        text_object: FPDF_PAGEOBJECT,
+        charcodes: *const u32,
+        count: size_t,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Returns a font object loaded from a stream of data. The font is loaded"]
+    #[doc = " into the document."]
+    #[doc = ""]
+    #[doc = " document   - handle to the document."]
+    #[doc = " data       - the stream of data, which will be copied by the font object."]
+    #[doc = " size       - size of the stream, in bytes."]
+    #[doc = " font_type  - FPDF_FONT_TYPE1 or FPDF_FONT_TRUETYPE depending on the font"]
+    #[doc = " type."]
+    #[doc = " cid        - a boolean specifying if the font is a CID font or not."]
+    #[doc = ""]
+    #[doc = " The loaded font can be closed using FPDFFont_Close."]
+    #[doc = ""]
+    #[doc = " Returns NULL on failure"]
+    pub fn FPDFText_LoadFont(
+        document: FPDF_DOCUMENT,
+        data: *const u8,
+        size: u32,
+        font_type: ::std::os::raw::c_int,
+        cid: FPDF_BOOL,
+    ) -> FPDF_FONT;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Loads one of the standard 14 fonts per PDF spec 1.7 page 416. The preferred"]
+    #[doc = " way of using font style is using a dash to separate the name from the style,"]
+    #[doc = " for example 'Helvetica-BoldItalic'."]
+    #[doc = ""]
+    #[doc = " document   - handle to the document."]
+    #[doc = " font       - string containing the font name, without spaces."]
+    #[doc = ""]
+    #[doc = " The loaded font can be closed using FPDFFont_Close."]
+    #[doc = ""]
+    #[doc = " Returns NULL on failure."]
+    pub fn FPDFText_LoadStandardFont(document: FPDF_DOCUMENT, font: FPDF_BYTESTRING) -> FPDF_FONT;
+}
+extern "C" {
+    #[doc = " Get the font size of a text object."]
+    #[doc = ""]
+    #[doc = "   text - handle to a text."]
+    #[doc = "   size - pointer to the font size of the text object, measured in points"]
+    #[doc = "   (about 1/72 inch)"]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFTextObj_GetFontSize(text: FPDF_PAGEOBJECT, size: *mut f32) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Close a loaded PDF font."]
+    #[doc = ""]
+    #[doc = " font   - Handle to the loaded font."]
+    pub fn FPDFFont_Close(font: FPDF_FONT);
+}
+extern "C" {
+    #[doc = " Create a new text object using a loaded font."]
+    #[doc = ""]
+    #[doc = " document   - handle to the document."]
+    #[doc = " font       - handle to the font object."]
+    #[doc = " font_size  - the font size for the new text object."]
+    #[doc = ""]
+    #[doc = " Returns a handle to a new text object, or NULL on failure"]
+    pub fn FPDFPageObj_CreateTextObj(
+        document: FPDF_DOCUMENT,
+        font: FPDF_FONT,
+        font_size: f32,
+    ) -> FPDF_PAGEOBJECT;
+}
+extern "C" {
+    #[doc = " Get the text rendering mode of a text object."]
+    #[doc = ""]
+    #[doc = " text     - the handle to the text object."]
+    #[doc = ""]
+    #[doc = " Returns one of the known FPDF_TEXT_RENDERMODE enum values on success,"]
+    #[doc = " FPDF_TEXTRENDERMODE_UNKNOWN on error."]
+    pub fn FPDFTextObj_GetTextRenderMode(text: FPDF_PAGEOBJECT) -> FPDF_TEXT_RENDERMODE;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Set the text rendering mode of a text object."]
+    #[doc = ""]
+    #[doc = " text         - the handle to the text object."]
+    #[doc = " render_mode  - the FPDF_TEXT_RENDERMODE enum value to be set (cannot set to"]
+    #[doc = "                FPDF_TEXTRENDERMODE_UNKNOWN)."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success."]
+    pub fn FPDFTextObj_SetTextRenderMode(
+        text: FPDF_PAGEOBJECT,
+        render_mode: FPDF_TEXT_RENDERMODE,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Get the text of a text object."]
+    #[doc = ""]
+    #[doc = " text_object      - the handle to the text object."]
+    #[doc = " text_page        - the handle to the text page."]
+    #[doc = " buffer           - the address of a buffer that receives the text."]
+    #[doc = " length           - the size, in bytes, of |buffer|."]
+    #[doc = ""]
+    #[doc = " Returns the number of bytes in the text (including the trailing NUL"]
+    #[doc = " character) on success, 0 on error."]
+    #[doc = ""]
+    #[doc = " Regardless of the platform, the |buffer| is always in UTF-16LE encoding."]
+    #[doc = " If |length| is less than the returned length, or |buffer| is NULL, |buffer|"]
+    #[doc = " will not be modified."]
+    pub fn FPDFTextObj_GetText(
+        text_object: FPDF_PAGEOBJECT,
+        text_page: FPDF_TEXTPAGE,
+        buffer: *mut FPDF_WCHAR,
+        length: ::std::os::raw::c_ulong,
+    ) -> ::std::os::raw::c_ulong;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get a bitmap rasterization of |text_object|. To render correctly, the caller"]
+    #[doc = " must provide the |document| associated with |text_object|. If there is a"]
+    #[doc = " |page| associated with |text_object|, the caller should provide that as well."]
+    #[doc = " The returned bitmap will be owned by the caller, and FPDFBitmap_Destroy()"]
+    #[doc = " must be called on the returned bitmap when it is no longer needed."]
+    #[doc = ""]
+    #[doc = "   document    - handle to a document associated with |text_object|."]
+    #[doc = "   page        - handle to an optional page associated with |text_object|."]
+    #[doc = "   text_object - handle to a text object."]
+    #[doc = "   scale       - the scaling factor, which must be greater than 0."]
+    #[doc = ""]
+    #[doc = " Returns the bitmap or NULL on failure."]
+    pub fn FPDFTextObj_GetRenderedBitmap(
+        document: FPDF_DOCUMENT,
+        page: FPDF_PAGE,
+        text_object: FPDF_PAGEOBJECT,
+        scale: f32,
+    ) -> FPDF_BITMAP;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the font of a text object."]
+    #[doc = ""]
+    #[doc = " text - the handle to the text object."]
+    #[doc = ""]
+    #[doc = " Returns a handle to the font object held by |text| which retains ownership."]
+    pub fn FPDFTextObj_GetFont(text: FPDF_PAGEOBJECT) -> FPDF_FONT;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the font name of a font."]
+    #[doc = ""]
+    #[doc = " font   - the handle to the font object."]
+    #[doc = " buffer - the address of a buffer that receives the font name."]
+    #[doc = " length - the size, in bytes, of |buffer|."]
+    #[doc = ""]
+    #[doc = " Returns the number of bytes in the font name (including the trailing NUL"]
+    #[doc = " character) on success, 0 on error."]
+    #[doc = ""]
+    #[doc = " Regardless of the platform, the |buffer| is always in UTF-8 encoding."]
+    #[doc = " If |length| is less than the returned length, or |buffer| is NULL, |buffer|"]
+    #[doc = " will not be modified."]
+    pub fn FPDFFont_GetFontName(
+        font: FPDF_FONT,
+        buffer: *mut ::std::os::raw::c_char,
+        length: ::std::os::raw::c_ulong,
+    ) -> ::std::os::raw::c_ulong;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the decoded data from the |font| object."]
+    #[doc = ""]
+    #[doc = " font       - The handle to the font object. (Required)"]
+    #[doc = " buffer     - The address of a buffer that receives the font data."]
+    #[doc = " buflen     - Length of the buffer."]
+    #[doc = " out_buflen - Pointer to variable that will receive the minimum buffer size"]
+    #[doc = "              to contain the font data. Not filled if the return value is"]
+    #[doc = "              FALSE. (Required)"]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success. In which case, |out_buflen| will be filled, and"]
+    #[doc = " |buffer| will be filled if it is large enough. Returns FALSE if any of the"]
+    #[doc = " required parameters are null."]
+    #[doc = ""]
+    #[doc = " The decoded data is the uncompressed font data. i.e. the raw font data after"]
+    #[doc = " having all stream filters applied, when the data is embedded."]
+    #[doc = ""]
+    #[doc = " If the font is not embedded, then this API will instead return the data for"]
+    #[doc = " the substitution font it is using."]
+    pub fn FPDFFont_GetFontData(
+        font: FPDF_FONT,
+        buffer: *mut u8,
+        buflen: size_t,
+        out_buflen: *mut size_t,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get whether |font| is embedded or not."]
+    #[doc = ""]
+    #[doc = " font - the handle to the font object."]
+    #[doc = ""]
+    #[doc = " Returns 1 if the font is embedded, 0 if it not, and -1 on failure."]
+    pub fn FPDFFont_GetIsEmbedded(font: FPDF_FONT) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the descriptor flags of a font."]
+    #[doc = ""]
+    #[doc = " font - the handle to the font object."]
+    #[doc = ""]
+    #[doc = " Returns the bit flags specifying various characteristics of the font as"]
+    #[doc = " defined in ISO 32000-1:2008, table 123, -1 on failure."]
+    pub fn FPDFFont_GetFlags(font: FPDF_FONT) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the font weight of a font."]
+    #[doc = ""]
+    #[doc = " font - the handle to the font object."]
+    #[doc = ""]
+    #[doc = " Returns the font weight, -1 on failure."]
+    #[doc = " Typical values are 400 (normal) and 700 (bold)."]
+    pub fn FPDFFont_GetWeight(font: FPDF_FONT) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the italic angle of a font."]
+    #[doc = ""]
+    #[doc = " font  - the handle to the font object."]
+    #[doc = " angle - pointer where the italic angle will be stored"]
+    #[doc = ""]
+    #[doc = " The italic angle of a |font| is defined as degrees counterclockwise"]
+    #[doc = " from vertical. For a font that slopes to the right, this will be negative."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success; |angle| unmodified on failure."]
+    pub fn FPDFFont_GetItalicAngle(font: FPDF_FONT, angle: *mut ::std::os::raw::c_int)
+        -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get ascent distance of a font."]
+    #[doc = ""]
+    #[doc = " font       - the handle to the font object."]
+    #[doc = " font_size  - the size of the |font|."]
+    #[doc = " ascent     - pointer where the font ascent will be stored"]
+    #[doc = ""]
+    #[doc = " Ascent is the maximum distance in points above the baseline reached by the"]
+    #[doc = " glyphs of the |font|. One point is 1/72 inch (around 0.3528 mm)."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success; |ascent| unmodified on failure."]
+    pub fn FPDFFont_GetAscent(font: FPDF_FONT, font_size: f32, ascent: *mut f32) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get descent distance of a font."]
+    #[doc = ""]
+    #[doc = " font       - the handle to the font object."]
+    #[doc = " font_size  - the size of the |font|."]
+    #[doc = " descent    - pointer where the font descent will be stored"]
+    #[doc = ""]
+    #[doc = " Descent is the maximum distance in points below the baseline reached by the"]
+    #[doc = " glyphs of the |font|. One point is 1/72 inch (around 0.3528 mm)."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success; |descent| unmodified on failure."]
+    pub fn FPDFFont_GetDescent(font: FPDF_FONT, font_size: f32, descent: *mut f32) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the width of a glyph in a font."]
+    #[doc = ""]
+    #[doc = " font       - the handle to the font object."]
+    #[doc = " glyph      - the glyph."]
+    #[doc = " font_size  - the size of the font."]
+    #[doc = " width      - pointer where the glyph width will be stored"]
+    #[doc = ""]
+    #[doc = " Glyph width is the distance from the end of the prior glyph to the next"]
+    #[doc = " glyph. This will be the vertical distance for vertical writing."]
+    #[doc = ""]
+    #[doc = " Returns TRUE on success; |width| unmodified on failure."]
+    pub fn FPDFFont_GetGlyphWidth(
+        font: FPDF_FONT,
+        glyph: u32,
+        font_size: f32,
+        width: *mut f32,
+    ) -> FPDF_BOOL;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get the glyphpath describing how to draw a font glyph."]
+    #[doc = ""]
+    #[doc = " font       - the handle to the font object."]
+    #[doc = " glyph      - the glyph being drawn."]
+    #[doc = " font_size  - the size of the font."]
+    #[doc = ""]
+    #[doc = " Returns the handle to the segment, or NULL on faiure."]
+    pub fn FPDFFont_GetGlyphPath(font: FPDF_FONT, glyph: u32, font_size: f32) -> FPDF_GLYPHPATH;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get number of segments inside glyphpath."]
+    #[doc = ""]
+    #[doc = " glyphpath - handle to a glyph path."]
+    #[doc = ""]
+    #[doc = " Returns the number of objects in |glyphpath| or -1 on failure."]
+    pub fn FPDFGlyphPath_CountGlyphSegments(glyphpath: FPDF_GLYPHPATH) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Experimental API."]
+    #[doc = " Get segment in glyphpath at index."]
+    #[doc = ""]
+    #[doc = " glyphpath  - handle to a glyph path."]
+    #[doc = " index      - the index of a segment."]
+    #[doc = ""]
+    #[doc = " Returns the handle to the segment, or NULL on faiure."]
+    pub fn FPDFGlyphPath_GetGlyphPathSegment(
+        glyphpath: FPDF_GLYPHPATH,
+        index: ::std::os::raw::c_int,
+    ) -> FPDF_PATHSEGMENT;
+}
+extern "C" {
+    #[doc = " Get number of page objects inside |form_object|."]
+    #[doc = ""]
+    #[doc = "   form_object - handle to a form object."]
+    #[doc = ""]
+    #[doc = " Returns the number of objects in |form_object| on success, -1 on error."]
+    pub fn FPDFFormObj_CountObjects(form_object: FPDF_PAGEOBJECT) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    #[doc = " Get page object in |form_object| at |index|."]
+    #[doc = ""]
+    #[doc = "   form_object - handle to a form object."]
+    #[doc = "   index       - the 0-based index of a page object."]
+    #[doc = ""]
+    #[doc = " Returns the handle to the page object, or NULL on error."]
+    pub fn FPDFFormObj_GetObject(
+        form_object: FPDF_PAGEOBJECT,
+        index: ::std::os::raw::c_ulong,
+    ) -> FPDF_PAGEOBJECT;
 }

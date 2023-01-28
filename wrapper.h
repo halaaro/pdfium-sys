@@ -13,3 +13,5 @@
 
 #include "fpdfview.h"
 #include "fpdf_transformpage.h"
+#include "fpdf_thumbnail.h"
+#include "fpdf_edit.h"
