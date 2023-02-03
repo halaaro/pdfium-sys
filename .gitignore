@@ -7,5 +7,3 @@
 
 /target
 Cargo.lock
-*.dll
-*.lib

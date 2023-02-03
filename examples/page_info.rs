@@ -1,11 +1,4 @@
-// Copyright 2021 pdfium-sys Developers
-//
-// Licensed under the Apache License, Version 2.0, <LICENSE-APACHE or
-// http://apache.org/licenses/LICENSE-2.0> or the MIT license <LICENSE-MIT or
-// http://opensource.org/licenses/MIT>, at your option. This file may not be
-// copied, modified, or distributed except according to those terms.
-
-extern crate pdfium_sys as sys;
+use pdfium_sys as sys;
 
 use std::env;
 use std::ffi;
@@ -16,8 +9,8 @@ fn main() {
 
     if args.len() != 2 {
         eprintln!(
-            "ERROR: unexpected number of arguments \n\nUSAGE:\n\t{} {}\n",
-            args[0], "<input.pdf>"
+            "ERROR: unexpected number of arguments \n\nUSAGE:\n\t{} <input.pdf>\n",
+            args[0]
         );
         std::process::exit(-1);
     }
@@ -43,7 +36,7 @@ fn main() {
 
     let count: i32;
     unsafe {
-        count = sys::FPDF_GetPageCount(doc) as i32;
+        count = sys::FPDF_GetPageCount(doc);
     }
     println!("FPDF_GetPageCount returned {}", count);
 

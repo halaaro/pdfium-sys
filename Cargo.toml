@@ -1,8 +1,8 @@
 [package]
 name = "pdfium-sys"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["Aaron Haley <15240680+aar0ndev@users.noreply.github.com>"]
-edition = "2018"
+edition = "2021"
 description = "PDFium low-level bindings for Rust"
 repository = "https://github.com/aar0ndev/pdfium-sys/"
 license = "MIT OR Apache-2.0"
@@ -10,11 +10,8 @@ keywords = ["pdfium", "pdf", "graphics", "bindings"]
 categories = ["external-ffi-bindings"]
 links = "pdfium"
 
-[features]
-default = ["bindgen"]
-
 [build-dependencies]
-bindgen = {version = "0.54", optional=true}
-
-[package.metadata.docs.rs]
-features = []
+reqwest = { version = "0.11.14", features = ["blocking"] }
+bindgen = { version = "0.63" }
+flate2 = "1.0.25"
+tar = "0.4.38"

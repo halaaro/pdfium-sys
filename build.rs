@@ -1,59 +1,93 @@
-// Copyright 2021 pdfium-sys Developers
-//
-// Licensed under the Apache License, Version 2.0, <LICENSE-APACHE or
-// http://apache.org/licenses/LICENSE-2.0> or the MIT license <LICENSE-MIT or
-// http://opensource.org/licenses/MIT>, at your option. This file may not be
-// copied, modified, or distributed except according to those terms.
+use std::{
+    env,
+    path::{Path, PathBuf},
+};
 
-#[cfg(feature = "bindgen")]
+use flate2::bufread::GzDecoder;
+use tar::Archive;
+
 extern crate bindgen;
 
-fn main() {
-    // Tell cargo to tell rustc to link the system
-    // shared library.
-    #[cfg(windows)]
-    {
-        println!("cargo:rustc-link-lib=dylib=pdfium.dll");
-    }
+const PDFIUM_DOWNLOAD_URL: &str =
+    "https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5567/pdfium-win-x64.tgz";
 
+fn main() {
+    let out_dir = get_pdfium();
+
+    // Tell cargo to look for shared libraries in the specified directory
+    println!(
+        "cargo:rustc-link-search={}",
+        out_dir.join("pdfium/lib").display()
+    );
+
+    // Tell cargo to tell rustc to link pdfium.
     #[cfg(not(windows))]
-    {
-        println!("cargo:rustc-link-lib=dylib=pdfium");
-    }
+    println!("cargo:rustc-link-lib=pdfium");
+
+    #[cfg(windows)]
+    println!("cargo:rustc-link-lib=pdfium.dll");
 
     // Tell cargo to invalidate the built crate whenever the wrapper changes
-    #[cfg(feature = "bindgen")]
-    {
-        println!("cargo:rerun-if-changed=wrapper.h");
-
-        // The bindgen::Builder is the main entry point
-        // to bindgen, and lets you build up options for
-        // the resulting bindings.
-        let bindings = bindgen::Builder::default()
-            // The input header we would like to generate
-            // bindings for.
-            .header("wrapper.h")
-            // Tell cargo to invalidate the built crate whenever any of the
-            // included header files changed.
-            .parse_callbacks(Box::new(bindgen::CargoCallbacks))
-            // Try to keep original comments for docs
-            .clang_args(
-                [
-                    "-fretain-comments-from-system-headers",
-                    "-fparse-all-comments",
-                ]
-                .iter(),
-            )
-            .generate_comments(true)
-            // Finish the builder and generate the bindings.
-            .generate()
-            // Unwrap the Result and panic on failure.
-            .expect("Unable to generate bindings");
-
-        // Write the bindings to the $OUT_DIR/bindings.rs file.
-        let out_path = std::path::PathBuf::from("src");
-        bindings
-            .write_to_file(out_path.join("bindings.rs"))
-            .expect("Couldn't write bindings!");
+    if !out_dir.join("bindings.rs").exists() {
+        println!("Generating bindings...");
+        generate_bindings(&out_dir);
     }
+}
+
+fn get_pdfium() -> PathBuf {
+    let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
+    if !out_dir.join("pdfium").exists() {
+        println!(
+            "Pdfium not found - downloading from https://github.com/bblanchon/pdfium-binaries"
+        );
+        download_pdfium(&out_dir);
+    }
+    out_dir
+}
+
+fn download_pdfium(out_dir: &Path) {
+    let client = reqwest::blocking::Client::new();
+    let tar_gz = client
+        .get(PDFIUM_DOWNLOAD_URL)
+        .send()
+        .expect("failed to send PDFIUM request")
+        .bytes()
+        .expect("failed to receive PDFIUM");
+
+    let tar = GzDecoder::new(&*tar_gz);
+    let mut archive = Archive::new(tar);
+    archive
+        .unpack(out_dir.join("pdfium"))
+        .expect("failed to unpack tar archive");
+}
+
+fn generate_bindings(out_dir: &Path) {
+    eprintln!("HELP: If bindgen fails, you may want to download and install LLVM. Check the release page on GitHub: https://github.com/llvm/llvm-project/releases");
+
+    // Tell cargo to invalidate the built crate whenever the wrapper changes
+    println!("cargo:rerun-if-changed=wrapper.h");
+
+    // Need to tell Clang to search the pdfium files.
+    let include_path = out_dir.join("pdfium/include");
+    println!("Adding {} to search path.", include_path.display());
+    std::env::set_var("CPATH", include_path);
+
+    // The bindgen::Builder is the main entry point
+    // to bindgen, and lets you build up options for
+    // the resulting bindings.
+    let bindings = bindgen::Builder::default()
+        // The input header we would like to generate
+        // bindings for.
+        .header("wrapper.h")
+        // Tell cargo to invalidate the built crate whenever any of the
+        // included header files changed.
+        .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+        // Finish the builder and generate the bindings.
+        .generate()
+        .expect("failed to generate bindings");
+
+    // Write the bindings to the $OUT_DIR/bindings.rs file.
+    bindings
+        .write_to_file(out_dir.join("bindings.rs"))
+        .expect("Couldn't write bindings!");
 }
