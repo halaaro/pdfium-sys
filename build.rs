@@ -24,6 +24,9 @@ fn main() {
     generate_bindings();
 
     if cfg!(feature = "pdfium_build") {
+        #[cfg(windows)]
+        eprintln!("HELP: If pdfium's build complains about missing Debugging Tools for Windows, go to Apps & Features -> Windows Software Development Kit -> Modify -> Choose \"Change\" -> Tick \"Debugging Tools for Windows\"");
+
         path::mkdirs(&path::gclient_build_dir());
         gclient::config();
         gclient::sync();
@@ -31,7 +34,9 @@ fn main() {
         ninja::compile();
         println!(
             "cargo:rustc-link-search=native={}",
-            path::pdfium_lib_dir().to_string_lossy()
+            path::pdfium_lib_dir()
+                .to_str()
+                .expect("pdfium directory path was not UTF-8")
         );
     } else if let Some(path) = env_dir("PDFIUM_LIB_DIR") {
         println!("cargo:rustc-link-search=native={path}");
@@ -59,6 +64,8 @@ fn link_dynamic() {
 
 #[cfg(feature = "bindgen")]
 fn generate_bindings() {
+    eprintln!("HELP: If bindgen fails due to missing LLVM, you may want to download and install LLVM. Check the release page on GitHub: https://github.com/llvm/llvm-project/releases");
+
     use std::path::PathBuf;
 
     // Tell cargo to invalidate the built crate whenever the wrapper changes
@@ -86,7 +93,14 @@ fn generate_bindings() {
         public_include.push("public");
         public_include
     };
-    builder = builder.clang_arg(format!("-I/{}", include_path.to_string_lossy()));
+    builder = builder.clang_arg(format!(
+        "-I{}",
+        include_path
+            .canonicalize()
+            .expect("could not canonicalize include path")
+            .to_str()
+            .expect("include path was not UTF-8")
+    ));
 
     let bindings = builder
         // Try to keep original comments for docs
@@ -100,10 +114,10 @@ fn generate_bindings() {
         // Unwrap the Result and panic on failure.
         .expect("Unable to generate bindings");
 
-    // Write the bindings to the $OUT_DIR/bindings.rs file.
-    let out_path = std::path::PathBuf::from("src");
+    // Write the bindings to the src/bindings.rs file.
+    let src_path = PathBuf::from("src");
     bindings
-        .write_to_file(out_path.join("bindings.rs"))
+        .write_to_file(src_path.join("bindings.rs"))
         .expect("Couldn't write bindings!");
 }
 

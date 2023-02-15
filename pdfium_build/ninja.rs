@@ -1,9 +1,8 @@
-use super::{depot_tools, path};
+use super::{cmd_ext::CmdExt, depot_tools, path};
 
-pub fn compile() {
+pub(crate) fn compile() {
     depot_tools::cmd("ninja")
         .args(["-C", "out/Default"])
         .current_dir(path::pdfium_root_dir())
-        .status()
-        .expect("error running ninja command");
+        .run_or_panic()
 }

@@ -1,8 +1,9 @@
+use super::cmd_ext::CmdExt;
 use super::{depot_tools, path};
 use std::fs;
 use std::io::Write;
 
-pub fn gen() {
+pub(crate) fn gen() {
     path::mkdirs(&path::pdfium_out_dir());
 
     let mut args_path = path::pdfium_out_dir();
@@ -28,6 +29,5 @@ pub fn gen() {
     depot_tools::cmd("gn")
         .args(["gen", "out/Default"])
         .current_dir(&path::pdfium_root_dir())
-        .status()
-        .expect("error running gn gen command");
+        .run_or_panic()
 }

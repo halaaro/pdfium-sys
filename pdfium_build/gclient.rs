@@ -1,24 +1,24 @@
+use crate::pdfium_build::cmd_ext::CmdExt;
+
 use super::{depot_tools, path};
 
-pub fn config() {
-    depot_tools::cmd("gclient")
-        .args([
-            "config",
-            "--unmanaged",
-            &format!("file://{}", &path::src_dir().to_string_lossy()),
-            "--custom-var=checkout_configuration=minimal",
-            "--cache-dir",
-            &path::cache_dir().to_string_lossy(),
-        ])
-        .current_dir(path::gclient_build_dir())
-        .status()
-        .expect("error executing gclient config");
+pub(crate) fn config() {
+    let mut cmd = depot_tools::cmd("gclient");
+    cmd.args([
+        "config",
+        "--unmanaged",
+        "https://pdfium.googlesource.com/pdfium.git",
+        "--custom-var=checkout_configuration=minimal",
+        "--cache-dir",
+        path::cache_dir().to_str().expect("cache dir was not UTF-8"),
+    ])
+    .current_dir(path::gclient_build_dir());
+    cmd.run_or_panic();
 }
 
-pub fn sync() {
+pub(crate) fn sync() {
     depot_tools::cmd("gclient")
         .args(["sync", "--no-history", "--shallow"])
         .current_dir(path::gclient_build_dir())
-        .status()
-        .expect("error executing gclient sync");
+        .run_or_panic()
 }
