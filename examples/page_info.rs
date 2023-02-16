@@ -16,8 +16,8 @@ fn main() {
 
     if args.len() != 2 {
         eprintln!(
-            "ERROR: unexpected number of arguments \n\nUSAGE:\n\t{} {}\n",
-            args[0], "<input.pdf>"
+            "ERROR: unexpected number of arguments \n\nUSAGE:\n\t{} <input.pdf>\n",
+            args[0]
         );
         std::process::exit(-1);
     }
