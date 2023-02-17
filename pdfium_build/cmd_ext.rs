@@ -7,6 +7,7 @@ pub(crate) trait CmdExt {
 }
 
 impl CmdExt for Command {
+    #[track_caller]
     fn run_or_panic(&mut self) {
         let status = self
             .status()

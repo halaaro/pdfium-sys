@@ -9,7 +9,7 @@ mod pdfium_build;
 
 use std::{env, fs};
 
-use pdfium_build::{gclient, gn, ninja, path};
+use crate::pdfium_build::{cmd_ext::CmdExt, depot_tools, gclient, gn, ninja, path};
 
 fn main() {
     if cfg!(feature = "dynamic_link") {
@@ -22,7 +22,15 @@ fn main() {
 
     if cfg!(feature = "pdfium_build") {
         #[cfg(windows)]
-        eprintln!("HELP: If pdfium's build complains about missing Debugging Tools for Windows, go to Apps & Features -> Windows Software Development Kit -> Modify -> Choose \"Change\" -> Tick \"Debugging Tools for Windows\"");
+        {
+            eprintln!("HELP: If pdfium's build complains about missing Debugging Tools for Windows, go to Apps & Features -> Windows Software Development Kit -> Modify -> Choose \"Change\" -> Tick \"Debugging Tools for Windows\"");
+
+            // Need to set the longpaths option for the vendored git client in depot_tools.
+            // Otherwise you might get "Filename too long" errors.
+            depot_tools::cmd("git")
+                .args(["config", "--system", "core.longpaths", "true"])
+                .run_or_panic();
+        }
 
         path::mkdirs(&path::gclient_build_dir());
         gclient::config();
