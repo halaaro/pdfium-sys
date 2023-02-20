@@ -22,6 +22,7 @@ pub(crate) fn cmd(name: &str) -> std::process::Command {
     );
 
     let mut cmd = Command::new(name);
-    cmd.env("PATH", new_path).env("DEPOT_TOOLS_WIN_TOOLCHAIN", "0");
+    cmd.env("PATH", new_path)
+        .env("DEPOT_TOOLS_WIN_TOOLCHAIN", "0");
     cmd
 }
