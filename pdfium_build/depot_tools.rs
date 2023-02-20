@@ -1,16 +1,29 @@
-use super::path;
+use super::{
+    cmd_ext::CmdExt,
+    path::{self, depot_tools_dir, out_dir},
+};
 use std::{env, process::Command};
 
-pub(crate) fn cmd(name: &str) -> std::process::Command {
-    let name = if cfg!(windows) {
-        format!("{}.bat", name)
-    } else {
-        name.to_string()
-    };
+pub(crate) fn clone() {
+    if depot_tools_dir().exists() {
+        return;
+    }
 
-    let mut tools = path::repo_dir();
-    tools.push("depot_tools");
-    let tools_dir = tools.to_str().expect("tools directory was not UTF-8");
+    Command::new("git")
+        .args([
+            "clone",
+            "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
+        ])
+        .arg(depot_tools_dir())
+        .run_or_panic()
+}
+
+pub(crate) fn cmd(name: &str) -> std::process::Command {
+    let tools_path = depot_tools_dir();
+    let tools_dir = tools_path
+        .to_str()
+        .expect("depot_tools directory was not UTF-8");
+    dbg!(&tools_dir);
 
     let path_separator = if cfg!(windows) { ';' } else { ':' };
 
@@ -20,6 +33,12 @@ pub(crate) fn cmd(name: &str) -> std::process::Command {
         path_separator,
         env::var("PATH").unwrap_or_default()
     );
+
+    let name = if cfg!(windows) {
+        format!("{}.bat", name)
+    } else {
+        name.to_string()
+    };
 
     let mut cmd = Command::new(name);
     cmd.env("PATH", new_path)

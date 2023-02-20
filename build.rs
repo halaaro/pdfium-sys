@@ -6,6 +6,8 @@
 // copied, modified, or distributed except according to those terms.
 
 mod pdfium_build;
+#[cfg(windows)]
+mod windows;
 
 use std::{env, fs};
 
@@ -17,20 +19,12 @@ fn main() {
     } else {
         link_static();
     }
-    #[cfg(feature = "bindgen")]
-    generate_bindings();
 
     if cfg!(feature = "pdfium_build") {
-        #[cfg(windows)]
-        {
-            eprintln!("HELP: If pdfium's build complains about missing Debugging Tools for Windows, go to Apps & Features -> Windows Software Development Kit -> Modify -> Choose \"Change\" -> Tick \"Debugging Tools for Windows\"");
+        depot_tools::clone();
 
-            // Need to set the longpaths option for the vendored git client in depot_tools.
-            // Otherwise you might get "Filename too long" errors.
-            depot_tools::cmd("git")
-                .args(["config", "--system", "core.longpaths", "true"])
-                .run_or_panic();
-        }
+        #[cfg(windows)]
+        windows::init();
 
         path::mkdirs(&path::gclient_build_dir());
         gclient::config();
@@ -46,6 +40,9 @@ fn main() {
     } else if let Some(path) = env_dir("PDFIUM_LIB_DIR") {
         println!("cargo:rustc-link-search=native={path}");
     }
+
+    #[cfg(feature = "bindgen")]
+    generate_bindings();
 }
 
 fn link_static() {
