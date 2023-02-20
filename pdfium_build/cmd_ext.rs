@@ -9,6 +9,12 @@ pub(crate) trait CmdExt {
 impl CmdExt for Command {
     #[track_caller]
     fn run_or_panic(&mut self) {
+        let dir = self
+            .get_current_dir()
+            .map(|p| p.display().to_string())
+            .unwrap_or_default();
+
+        println!("Running {:?} in {}", self, dir);
         let status = self
             .status()
             .unwrap_or_else(|e| panic!("failed to run command {:?}: {}", self, e));
@@ -16,11 +22,7 @@ impl CmdExt for Command {
         if !status.success() {
             panic!(
                 "command {:?} running in {} returned non-zero exit code: {}",
-                self,
-                self.get_current_dir()
-                    .map(|p| p.display().to_string())
-                    .unwrap_or_default(),
-                status
+                self, dir, status
             );
         }
     }
