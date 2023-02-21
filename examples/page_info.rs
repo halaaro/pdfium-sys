@@ -41,10 +41,7 @@ fn main() {
         file_path, password
     );
 
-    let count: i32;
-    unsafe {
-        count = sys::FPDF_GetPageCount(doc) as i32;
-    }
+    let count = unsafe { sys::FPDF_GetPageCount(doc) };
     println!("FPDF_GetPageCount returned {}", count);
 
     let mut width = 0.064;
