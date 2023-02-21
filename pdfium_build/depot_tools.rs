@@ -1,7 +1,4 @@
-use super::{
-    cmd_ext::CmdExt,
-    path::{self, depot_tools_dir, out_dir},
-};
+use super::{cmd_ext::CmdExt, path::depot_tools_dir};
 use std::{env, process::Command};
 
 pub(crate) fn clone() {
@@ -23,7 +20,6 @@ pub(crate) fn cmd(name: &str) -> std::process::Command {
     let tools_dir = tools_path
         .to_str()
         .expect("depot_tools directory was not UTF-8");
-    dbg!(&tools_dir);
 
     let path_separator = if cfg!(windows) { ';' } else { ':' };
 

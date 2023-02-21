@@ -47,17 +47,6 @@ pub(crate) fn depot_tools_dir() -> PathBuf {
     out_dir().join("depot_tools")
 }
 
-pub(crate) fn repo_dir() -> PathBuf {
-    // TODO: test that this is ok
-    std::env::current_dir().unwrap()
-}
-
-pub(crate) fn src_dir() -> PathBuf {
-    let mut src_dir = repo_dir();
-    src_dir.push("pdfium");
-    src_dir
-}
-
 pub(crate) fn mkdirs(dir: &PathBuf) {
     match fs::create_dir_all(dir) {
         Ok(_) => (),

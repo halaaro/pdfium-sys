@@ -11,15 +11,11 @@ mod windows;
 
 use std::{env, fs};
 
-use crate::pdfium_build::{cmd_ext::CmdExt, depot_tools, gclient, gn, ninja, path};
+use pdfium_build::path::pdfium_lib_dir;
+
+use crate::pdfium_build::{depot_tools, gclient, gn, ninja, path};
 
 fn main() {
-    if cfg!(feature = "dynamic_link") {
-        link_dynamic();
-    } else {
-        link_static();
-    }
-
     if cfg!(feature = "pdfium_build") {
         depot_tools::clone();
 
@@ -41,6 +37,13 @@ fn main() {
         println!("cargo:rustc-link-search=native={path}");
     }
 
+    if cfg!(feature = "dynamic_link") {
+        link_dynamic();
+    } else {
+        link_static();
+        link_custom_libcxx();
+    }
+
     #[cfg(feature = "bindgen")]
     generate_bindings();
 }
@@ -48,11 +51,12 @@ fn main() {
 fn link_static() {
     if cfg!(windows) {
         println!("cargo:rustc-link-lib=pdfium");
+        println!("cargo:rustc-link-lib=winmm");
+        println!("cargo:rustc-link-lib=gdi32");
+        println!("cargo:rustc-link-lib=user32");
+        println!("cargo:rustc-link-lib=msvcprt");
     } else {
         println!("cargo:rustc-link-lib=static=pdfium");
-    }
-    if !cfg!(feature = "link_cplusplus") {
-        println!("cargo:rustc-link-lib=static:-bundle=stdc++");
     }
 }
 
@@ -64,11 +68,35 @@ fn link_dynamic() {
     }
 }
 
+/// Pdfium uses a custom C++ standard library that we need to link with.
+/// Thankfully it produces all the necessary object files during the pdfium build,
+/// we just have to direct the cc crate to use them.
+fn link_custom_libcxx() {
+    let lib_dir = pdfium_lib_dir();
+    let custom_libcxx_dir = lib_dir
+        .join("buildtools")
+        .join("third_party")
+        .join("libc++")
+        .join("libc++");
+    let object_files = std::fs::read_dir(custom_libcxx_dir)
+        .unwrap()
+        .map(|r| r.unwrap().path());
+
+    let mut builder = cc::Build::new();
+    for object_file in object_files {
+        builder.object(object_file);
+    }
+
+    builder.compile("custom_libcxx");
+}
+
 #[cfg(feature = "bindgen")]
 fn generate_bindings() {
     eprintln!("HELP: If bindgen fails due to missing LLVM, you may want to download and install LLVM. Check the release page on GitHub: https://github.com/llvm/llvm-project/releases");
 
     use std::path::PathBuf;
+
+    use crate::pdfium_build::path::out_dir;
 
     // Tell cargo to invalidate the built crate whenever the wrapper changes
     println!("cargo:rerun-if-changed=wrapper.h");
@@ -91,15 +119,13 @@ fn generate_bindings() {
         }
         p
     } else {
-        let mut public_include = pdfium_build::path::src_dir();
-        public_include.push("public");
-        public_include
+        pdfium_build::path::pdfium_root_dir().join("public")
     };
     builder = builder.clang_arg(format!(
         "-I{}",
         include_path
             .canonicalize()
-            .expect("could not canonicalize include path")
+            .unwrap_or_else(|_| panic!("could not canonicalize include path {:?}", include_path))
             .to_str()
             .expect("include path was not UTF-8")
     ));
@@ -116,10 +142,9 @@ fn generate_bindings() {
         // Unwrap the Result and panic on failure.
         .expect("Unable to generate bindings");
 
-    // Write the bindings to the src/bindings.rs file.
-    let src_path = PathBuf::from("src");
+    // Write the bindings to the OUT_DIR/bindings.rs file.
     bindings
-        .write_to_file(src_path.join("bindings.rs"))
+        .write_to_file(out_dir().join("bindings.rs"))
         .expect("Couldn't write bindings!");
 }
 

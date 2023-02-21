@@ -12,15 +12,15 @@ pub(crate) fn gen() {
     {
         let mut args_gn = fs::File::create(&args_path).expect("unable to create args.gn");
         for line in [
-            "use_goma = false", // Googlers only. Make sure goma is installed and running first.
-            "is_debug = false", // Enable debugging features.
+            "use_goma = false",           // Googlers only, hence false.
+            "is_debug = false", // Enable debugging features. TODO: Maybe this should only be false in release builds?
             "pdf_use_skia = false", // to enable experimental Skia backend.
             "pdf_enable_xfa = false", // Set false to remove XFA support (implies JS support).
             "pdf_enable_v8 = false", // Set false to remove Javascript support.
             "pdf_is_standalone = true", // Set for a non-embedded build.
             "is_component_build = false", // Disable component build (Though it should work)
             "pdf_is_complete_lib = true", // added per https://groups.google.com/g/pdfium/c/FUUMa9e1dpk
-            "use_custom_libcxx = false", // added per https://github.com/ajrcarey/pdfium-render/issues/53
+            "use_custom_libcxx = true",   // Use pdfium's vendored libc++.
         ] {
             writeln!(args_gn, "{}", line).expect("error writing to args.gn");
         }

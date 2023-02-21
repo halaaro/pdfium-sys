@@ -24,7 +24,12 @@ pub(crate) fn config() {
 
 pub(crate) fn sync() {
     depot_tools::cmd("gclient")
-        .args(["sync", "--no-history", "--shallow"])
+        .args([
+            "sync",
+            "--no-history",
+            "--shallow",
+            "--revision=68b78719e8751b40344437408ed7f2aa1e7083a4",
+        ])
         .current_dir(path::gclient_build_dir())
         .run_or_panic()
 }
