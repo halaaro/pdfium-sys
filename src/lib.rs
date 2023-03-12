@@ -9,6 +9,10 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 
-mod bindings;
+#[cfg(feature = "bindgen")]
+include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
-pub use bindings::*;
+#[cfg(not(feature = "bindgen"))]
+mod static_bindings;
+#[cfg(not(feature = "bindgen"))]
+pub use static_bindings::*;
