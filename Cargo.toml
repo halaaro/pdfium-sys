@@ -11,7 +11,7 @@ categories = ["external-ffi-bindings"]
 links = "pdfium"
 
 [features]
-default = ["pdfium_build"]
+default = []
 dynamic_link = []
 pdfium_build = []
 
