@@ -1,7 +1,7 @@
 use std::{env, fs, io::ErrorKind, path::PathBuf};
 
 pub fn gclient_build_dir() -> PathBuf {
-    if let Ok(path) = env::var("PDFIUM_BUILD_DIR") {
+    if let Ok(path) = env::var("PDFIUM_GCLIENT_BUILD") {
         path.into()
     } else {
         let mut gclient_path: PathBuf = target_dir().parent().unwrap().into();
