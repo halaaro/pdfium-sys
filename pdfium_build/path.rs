@@ -4,10 +4,21 @@ pub fn gclient_build_dir() -> PathBuf {
     if let Ok(path) = env::var("PDFIUM_BUILD_DIR") {
         path.into()
     } else {
-        let mut out_path: PathBuf = env::var("OUT_DIR").unwrap().into();
-        out_path.push(".gclient");
-        out_path
+        let mut gclient_path: PathBuf = target_dir().parent().unwrap().into();
+        gclient_path.push("gclient");
+        gclient_path
     }
+}
+
+fn target_dir() -> PathBuf {
+    PathBuf::from(env::var("OUT_DIR").unwrap())
+        .parent()
+        .unwrap()
+        .parent()
+        .unwrap()
+        .parent()
+        .unwrap()
+        .into()
 }
 
 pub fn pdfium_root_dir() -> PathBuf {
@@ -17,9 +28,8 @@ pub fn pdfium_root_dir() -> PathBuf {
 }
 
 pub fn pdfium_out_dir() -> PathBuf {
-    let mut out_dir = pdfium_root_dir();
-    out_dir.push("out");
-    out_dir.push("Default");
+    let mut out_dir = target_dir();
+    out_dir.push("gn_out");
     out_dir
 }
 
@@ -33,7 +43,7 @@ pub fn cache_dir() -> PathBuf {
     if let Ok(path) = env::var("PDFIUM_GCLIENT_CACHE") {
         path.into()
     } else {
-        let mut cache_path= gclient_build_dir();
+        let mut cache_path = gclient_build_dir();
         cache_path.push("cache");
         cache_path
     }

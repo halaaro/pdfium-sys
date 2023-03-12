@@ -1,9 +1,13 @@
 use super::{depot_tools, path};
 
 pub fn compile() {
-    depot_tools::cmd("ninja")
-        .args(["-C", "out/Default"])
-        .current_dir(path::pdfium_root_dir())
-        .status()
-        .expect("error running ninja command");
+    assert!(
+        depot_tools::cmd("ninja")
+            .args(["-C", &path::pdfium_out_dir().display().to_string()])
+            .current_dir(path::pdfium_root_dir())
+            .status()
+            .unwrap()
+            .success(),
+        "error running ninja command"
+    );
 }
