@@ -15,6 +15,15 @@ use std::{env, fs};
 use pdfium_build::{gclient, gn, ninja, path};
 
 fn main() {
+    for env_var in [
+        "PDFIUM_GCLIENT_CACHE",
+        "PDFIUM_GCLIENT_BUILD",
+        "PDFIUM_LIB_DIR",
+        "PDFIUM_INCLUDE",
+    ] {
+        println!("cargo:rerun-if-env-changed={env_var}");
+    }
+
     if cfg!(feature = "dynamic_link") {
         link_dynamic();
     } else {
