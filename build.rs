@@ -94,9 +94,18 @@ fn generate_bindings() {
     } else {
         let mut public_include = pdfium_build::path::src_dir();
         public_include.push("public");
+        if !public_include.exists() {
+            panic!(concat!(
+                "PDFium headers not found. ",
+                "Ensure `PDFIUM_INCLUDE` is set to valid path where headers can be found. ",
+                "If building `pdfium-src` directly or as a local path dependency, ",
+                "consider updating git submodules: \n",
+                "`git submodule update --init --recursive`."
+            ));
+        }
         public_include
     };
-    builder = builder.clang_arg(format!("-I/{}", include_path.to_string_lossy()));
+    builder = builder.clang_arg(format!("-I/{}", include_path.display()));
 
     let bindings = builder
         // Try to keep original comments for docs
