@@ -24,11 +24,12 @@ fn main() {
         println!("cargo:rerun-if-env-changed={env_var}");
     }
 
-    if cfg!(feature = "dynamic_link") {
+    if cfg!(feature = "dynamic_link") && cfg!(not(feature = "pdfium_build")) {
         link_dynamic();
     } else {
         link_static();
     }
+
     #[cfg(feature = "bindgen")]
     generate_bindings();
 
@@ -40,7 +41,7 @@ fn main() {
         ninja::compile();
         println!(
             "cargo:rustc-link-search=native={}",
-            path::pdfium_lib_dir().to_string_lossy()
+            path::pdfium_lib_dir().display()
         );
     } else if let Some(path) = env_dir("PDFIUM_LIB_DIR") {
         println!("cargo:rustc-link-search=native={path}");
