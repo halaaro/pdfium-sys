@@ -1,12 +1,20 @@
 use super::{depot_tools, path};
 
 pub fn config() {
+    if !path::src_dir().join("BUILD.gn").exists() {
+        panic!(concat!(
+            "Could not find pdfium sources. ",
+            "Make sure git submodules are been updated: \n",
+            "`git submodule update --init --recursive`."
+        ));
+    }
+
     assert!(
         depot_tools::cmd("gclient")
             .args([
                 "config",
                 "--unmanaged",
-                &format!("file://{}", &path::src_dir().to_string_lossy()),
+                &format!("file://{}", &path::src_dir().display()),
                 "--custom-var=checkout_configuration=minimal",
                 "--cache-dir",
                 &path::cache_dir().to_string_lossy(),
