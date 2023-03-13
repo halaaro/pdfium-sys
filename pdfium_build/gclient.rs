@@ -16,9 +16,9 @@ pub fn config() {
                 "--unmanaged",
                 &format!("file://{}", &path::src_dir().display()),
                 "--custom-var=checkout_configuration=minimal",
-                "--cache-dir",
-                &path::cache_dir().to_string_lossy(),
+                "--cache-dir"
             ])
+            .arg(path::cache_dir())
             .current_dir(path::gclient_build_dir())
             .status()
             .unwrap()

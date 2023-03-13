@@ -30,7 +30,8 @@ pub fn gen() {
 
     assert!(
         depot_tools::cmd("gn")
-            .args(["gen", &path::pdfium_out_dir().display().to_string()])
+            .arg("gen")
+            .arg(path::pdfium_out_dir())
             .current_dir(&path::pdfium_root_dir())
             .status()
             .unwrap()
