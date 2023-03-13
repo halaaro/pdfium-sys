@@ -1,14 +1,25 @@
 # PDFium low-level bindings for Rust
 
-Relies on `pdfium.dll` to be available. Tested against binaries from https://github.com/bblanchon/pdfium-binaries.
+> WARNING: This crate is very much a work in progress in its current state.
 
-> Only tested on Windows. Pull requests welcome!
+## Features
 
-## Building from Source
+**`dynamic_link`** - Link to dynamic library instead of default static lib.
+
+If not installed in a system location, ensure enviroment variable `PDFIUM_LIB_PATH` is set to the location of the PDFium dynamic library. The library name should be `libpdfium.so` or `pdfium.dll` (on Windows). Feature is ignored when `pdfium_build` enabled.
+
+**`pdfium_build`** (EXPERIMENTAL) - Build PDFium static library from sources.
+
+By default dependent sources and tools are downloaded to a location where `cargo clean` will remove them. These environment variables can be used to override the default location to avoid this behavior:
+
+| Enviroment variable    | Meaning                           |
+| ---                    | ---                               |
+| `PDFIUM_GCLIENT_CACHE` | Cache location used by `gclient`. |
+| `PDFIUM_GCLIENT_BUILD` | Build location for dependencies.  |
+
+**`bindgen`** - Generate bindings from sources.
 
 Must have Clang installed to run `bindgen`. See [bindgen requirements](https://rust-lang.github.io/rust-bindgen/requirements.html) for details.
-
-Ensure the pdfium header `fpdfview.h` is available. In Windows it is enough to add its path to the `INCLUDE` environment variable before calling `cargo build`.
 
 ## License
 
