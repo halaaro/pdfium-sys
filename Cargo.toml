@@ -19,7 +19,7 @@ pdfium_build = []
 link-cplusplus = { version = "1.0", optional = true }
 
 [build-dependencies]
-bindgen = { version = "0.54", optional = true }
+bindgen = { version = "0.54" }
 cc = "1.0.79"
 
 [target.'cfg(windows)'.build-dependencies]

@@ -44,7 +44,6 @@ fn main() {
         link_custom_libcxx();
     }
 
-    #[cfg(feature = "bindgen")]
     generate_bindings();
 }
 
@@ -90,7 +89,6 @@ fn link_custom_libcxx() {
     builder.compile("custom_libcxx");
 }
 
-#[cfg(feature = "bindgen")]
 fn generate_bindings() {
     eprintln!("HELP: If bindgen fails due to missing LLVM, you may want to download and install LLVM. Check the release page on GitHub: https://github.com/llvm/llvm-project/releases");
 

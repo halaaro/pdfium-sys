@@ -12,6 +12,10 @@
 #endif
 
 #include "fpdfview.h"
-#include "fpdf_transformpage.h"
-#include "fpdf_thumbnail.h"
+#include "fpdf_annot.h"
+#include "fpdf_doc.h"
 #include "fpdf_edit.h"
+#include "fpdf_formfill.h"
+#include "fpdf_text.h"
+#include "fpdf_thumbnail.h"
+#include "fpdf_transformpage.h"
